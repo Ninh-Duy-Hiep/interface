@@ -1,0 +1,172 @@
+.modal {
+    background-color: transparent !important;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 500;
+}
+
+.modal-dialog {
+    z-index: 1050;
+}
+
+.modal.fade:not(.show) {
+    display: none;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-backdrop {
+    z-index: 1040;
+}
+
+.modal-header {
+    background-color: #EEEEEE;
+}
+
+
+.modal-header img {
+    width: 2rem;
+    height: auto;
+    cursor: pointer;
+}
+.custom-modal {
+    width: 90%;
+    max-width: 913px;
+    margin: 1.75rem auto;
+}
+
+.custom-modal .modal-content {
+    min-height: 450px;
+    height: auto;
+    border: 1px solid #DBD6D6 !important;
+}
+
+.modal-body {   
+    overflow-y: auto;
+}
+
+.custom-textarea {
+    resize: none;
+    height: 254px;
+}
+
+.custom-modal-footer {
+    border: none !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.note-footer  {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #919191;
+}
+
+.custom-cancel-btn {
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background: linear-gradient(45deg, #418FF5, #1562F1);
+}
+
+.custom-save-btn {
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background: linear-gradient(45deg, #4DD969, #28CD56);
+}
+
+.custom-close-btn {
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background: linear-gradient(45deg, #85A5CD, #4E6AA0);
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; 
+    cursor: pointer;
+}
+
+.form-label {
+    white-space: nowrap;
+}
+
+#citizenAddress {
+    flex: 1;
+}
+
+.modal .form-control {
+    color: #1A1B23;
+}
+/* Responsive */
+@media (max-width: 992px) {
+    .custom-modal {
+        width: 95%;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-modal {
+        width: 98%;
+        margin: 0.5rem auto;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 1550px) {
+    .custom-modal {
+        max-width: 1200px;
+        height: 900px;
+    }
+
+    .modal-content {
+        height: 600px;
+    }
+
+    .modal-header {
+        padding: 1.5rem 2rem;
+    }
+
+    .modal-body {
+        padding: 2rem;
+    }
+
+    .modal-footer {
+        padding: 1.5rem 2rem;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .form-control {
+        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+    }
+
+    .form-label {
+        font-size: 1.1rem;
+    }
+
+    .modal-footer .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
