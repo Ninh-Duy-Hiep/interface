@@ -50,12 +50,8 @@ function showProcessModal(link) {
             modalElement.addEventListener('shown.bs.modal', function () {
                 document.getElementById('processNote').focus();
             });
-        } else {
-            console.error("Một hoặc nhiều phần tử cần thiết không tồn tại trong .display-section.");
         }
-    } else {
-        console.error("Không tìm thấy .display-section.");
-    }
+    } 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
