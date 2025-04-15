@@ -1,0 +1,229 @@
+/* .main-screen */
+.main-screen{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border: 1px solid #DBD6D6;
+    border-radius: 5px;
+}
+
+.main-screen.show{
+    display: block;
+    opacity: 1;
+}
+
+.display-main-screen {
+    max-height: 75vh; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    padding: 10px; 
+    background-color: #fff; 
+}
+
+.header-main-screen {
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    border-bottom: 1px solid #DBD6D6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.choose-service {
+    border: 1px solid #DBD6D6;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    height: 38px;
+}
+
+.choose-service label {
+    margin-left: 10px;
+    font-family: "Be VietNam Pro",sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #919191;
+}
+
+#selected-service {
+    width: 150px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 10px;
+    line-height: 24px;
+    font-family: "Be VietNam Pro",sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #919191;
+}
+
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%; 
+}
+
+.dropdown-toggle {
+    height: 100% !important; 
+    justify-content: center;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+    transform-origin: top right !important;
+    min-width: 200px; 
+}
+
+
+
+.btn-outline-secondary {
+    background-color: white !important;
+    border: none !important; 
+    border-left: 1px solid #DBD6D6 !important; 
+    border-radius: 0 !important; 
+    margin-right: 1px;
+}
+
+.btn-outline-secondary:hover, 
+.btn-outline-secondary:focus, 
+.btn-outline-secondary:active {
+    background-color: white !important;
+    color: #6c757d !important;
+    box-shadow: none !important;
+    border-left: 1px solid #DBD6D6 !important; 
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 25px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    height: 38px;
+    max-width: 290px;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    color: #0d0c22;
+    transition: .3s ease;
+    border: 1px solid #DBD6D6;
+}
+
+.input::placeholder {
+    color: #919191;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.icon {
+    position: absolute;
+    right: 0rem;
+    fill: #9e9ea7;
+    width: 2.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+    padding: 0.5rem;
+    border-left: 1px solid #DBD6D6;
+    height: 100%;
+}
+
+.display-section {
+    align-items: center;
+    padding: 15px;
+    background-color: #FFFFFF;
+}
+
+.display-section img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.name {
+    font-family: "Be VietNam Pro",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1A1B23;
+}
+
+.location {
+    font-family: "Be VietNam Pro",sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    color: #919191; 
+}
+
+.line {
+    width: 1px;
+    height: 50px;
+    background-color: #DBD6D6;
+    margin: 0 15px;
+}
+
+.line-hr {
+    margin: 10px 15px;
+}
+
+.service-info p,
+.service-info span{
+    font-family: "Be VietNam Pro",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1A1B23; 
+}
+
+.number-service {
+    font-weight: 500;
+    font-size: 40px;
+    color: #1A1B23;
+}
+
+.button-main-screen {
+    gap: 10px;
+}
+
+.custom-btn-1,
+.custom-btn-2 {
+    width: 85px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; 
+    cursor: pointer;
+}
+
+.custom-btn-1 {
+    background: linear-gradient(45deg,#4DD969,#28CD56);
+}
+
+.custom-btn-2 {
+    background: linear-gradient(45deg,#418FF5,#1562F1);
+}
