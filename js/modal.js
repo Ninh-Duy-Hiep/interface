@@ -56,4 +56,9 @@ function showProcessModal(link) {
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeModalEvents();
+    const modalElement = document.getElementById('processModal');
+    modalElement.addEventListener('shown.bs.modal', function () {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+    });
 });
