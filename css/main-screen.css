@@ -20,6 +20,14 @@
     background-color: #fff; 
 }
 
+.display-main-screen::-webkit-scrollbar {
+    width: 6px;
+}
+.display-main-screen::-webkit-scrollbar-thumb {
+    background-color: #D9D9D9;
+    border-radius: 3px;
+}
+
 .header-main-screen {
     background-color: #f4f4f4;
     padding: 10px 0;

@@ -50,7 +50,7 @@ html {
     padding: 10px;
     display: inline-block;
     position: relative;
-    z-index: 1; 
+    z-index: 1;
     margin-top: 10px;
     font-family: "Barlow", sans-serif;
     font-weight: 600;
@@ -64,7 +64,7 @@ html {
     position: absolute;
     left: -9rem;
     top: 0;
-    width: calc(100% + 160px); 
+    width: calc(100% + 160px);
     height: 100%;
     background-color:#FFFFFFBD;
     border-radius: 4px;
@@ -120,6 +120,7 @@ html {
     font-weight: 500;
     margin-right: 10px;
 }
+
 .logout-btn:hover,
 .logout-btn:active,
 .logout-btn:focus,
@@ -142,29 +143,34 @@ html {
 }
 
 .menu-main-screen,
-.menu-service-configuration {
-    margin-top: 20px;
+.menu-service-configuration,
+.menu-news-management {
+    /* margin-top: 20px; */
     text-decoration: none;
 }
 
-.text-main,
-.text-service {
+/* .text-main,
+.text-service,
+.text-news
+{
     margin-left: 25px;
-}
+} */
 
-.text-main {
+/* .text-main {
     margin-bottom: 15px;
-}
+} */
 
 .text-main-1,
-.text-service-1 {
+.text-service-1,
+.text-news-1 {
     font-weight: 500;
     font-size: 15px;
     color: #1A1B23;
 }
 
 .text-main-2,
-.text-service-2 {
+.text-service-2,
+.text-news-2 {
     font-weight: 400;
     font-size: 10px;
     color: #919191;
@@ -177,13 +183,14 @@ html {
     width: 40px;
     height: 40px;
     border: 1px solid #EEEEEE;
-    border-radius: 50%; 
-    padding: 5px; 
-    background-color: white; 
+    border-radius: 50%;
+    padding: 5px;
+    background-color: white;
 }
 
 .button-text-main,
-.button-text-service {
+.button-text-service,
+.button-text-news {
     color: #919191;
     width: 25px;
     height: 25px;
@@ -193,7 +200,8 @@ html {
 }
 
 .button-text-service.active,
-.button-text-main.active {
+.button-text-main.active,
+.button-text-news.active {
     background-color: #28CD56;
     color: white;
 }
@@ -236,4 +244,56 @@ html {
     font-family: "Be Vietnam Pro", sans-serif;
 }
 
+/* Toast */
+.toast {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    max-width: 350px;
+    padding: 10px 15px;
+}
 
+.toast-body {
+    flex-grow: 1;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.toast-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.toast-wrapper {
+    margin-bottom: 20px;
+}
+
+@keyframes toastSlideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toastFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.toast-animated {
+    animation: toastSlideIn 0.4s ease forwards;
+}
+
+.toast.hide {
+    animation: toastFadeOut 0.4s ease forwards !important;
+}

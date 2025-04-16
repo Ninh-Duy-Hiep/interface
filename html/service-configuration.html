@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cấu hình dịch vụ - Hệ thống đăng kí dịch vụ một cửa SOSR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/service-configuration.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     <script src="../js/router.js"></script>
-    <script src="../js/service-configuration.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
 
     <header class="header bg-light">
@@ -29,8 +31,9 @@
                         <span class="address">PHƯỜNG QUANG TRUNG - TỈNH NGHỆ AN</span>
                     </div>
                 </div>
-    
-                <div class="header-right col-12 col-lg-6 d-flex justify-content-md-end justify-content-center align-items-center gap-3">
+
+                <div
+                    class="header-right col-12 col-lg-6 d-flex justify-content-md-end justify-content-center align-items-center gap-3">
                     <button class="btn logout-btn">Thoát</button>
                     <div class="user-info d-flex flex-column align-items-center text-center">
                         <div class="user-avatar-wrapper mb-1">
@@ -41,13 +44,13 @@
                 </div>
             </div>
         </div>
-    </header>    
+    </header>
 
     <div class="container-fluid">
         <div class="row main-layout">
             <!-- side bar -->
             <aside class="col-2 menu position-relative">
-                <a href="main-screen.html" class="menu-main-screen d-flex justify-content-between">
+                <a href="main-screen.html" class="menu-main-screen d-flex justify-content-between mb-3">
                     <div class="text-main">
                         <p class="text-main-1 mb-0">Màn hình chính</p>
                         <p class="text-main-2 mb-0">Danh sách hàng đợi chờ xử lý</p>
@@ -56,7 +59,8 @@
                         <ion-icon class="button-text-main" name="chevron-forward-outline"></ion-icon>
                     </div>
                 </a>
-                <a href="service-configuration.html" class="menu-service-configuration d-flex justify-content-between">
+                <a href="service-configuration.html"
+                    class="menu-service-configuration d-flex justify-content-between mb-3">
                     <div class="text-service">
                         <p class="text-service-1 mb-0">Cấu hình dịch vụ</p>
                         <p class="text-service-2 mb-0">
@@ -67,46 +71,75 @@
                         <ion-icon class="button-text-service" name="chevron-forward-outline"></ion-icon>
                     </div>
                 </a>
+                <a href="news-management.html" class="menu-news-management d-flex justify-content-between mb-3">
+                    <div class="text-news">
+                        <p class="text-news-1 mb-0">Quản lý tin tức</p>
+                        <p class="text-news-2 mb-0">
+                            Tin tức hiển thị trên trang chủ
+                        </p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-news" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
                 <div class="divider-vertical p-0"></div>
             </aside>
-            
+
             <!-- display -->
             <main class="col-10 display-container">
                 <div class="container-service-configuration show">
                     <div class="header-service d-flex justify-content-between align-items-center">
                         <p class="mb-0">Cấu hình dịch vụ</p>
-                        <button class="btn">Thêm mới</button>
+                        <button class="btn" onclick="showToast('Thao tác thành công!', 'success')">Thêm mới</button>
                     </div>
                     <!-- <hr> -->
                     <div class="content-service d-flex">
                         <div class="service col-5">
-                            <div class="row">
-                                <div class="col-5">
-                                    <div class="box-service text-center">
-                                        <img  src="/image/service1.png" alt="logo">
-                                        <p class="mb-0">Tạm trú tạm vắng</p>
+                            <div class="service-container">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="box-service text-center">
+                                            <img src="/image/service1.png" alt="logo">
+                                            <p class="mb-0">Tạm trú tạm vắng</p>
+                                        </div>
+                                        <div class="box-service text-center">
+                                            <img src="/image/service3.png" alt="logo">
+                                            <p class="mb-0">Khai sinh</p>
+                                        </div>
+                                        <div class="box-service text-center">
+                                            <img src="/image/service5.png" alt="logo">
+                                            <p class="mb-0">Hỏi đáp pháp luật</p>
+                                        </div>
+                                        <div class="box-service text-center">
+                                            <img src="/image/service5.png" alt="logo">
+                                            <p class="mb-0">Hỏi đáp pháp luật</p>
+                                        </div>
+                                        <div class="box-service text-center">
+                                            <img src="/image/service5.png" alt="logo">
+                                            <p class="mb-0">Hỏi đáp pháp luật</p>
+                                        </div>
                                     </div>
-                                    <div class="box-service text-center">
-                                        <img  src="/image/service3.png" alt="logo">
-                                        <p class="mb-0">Khai sinh</p>
-                                    </div>
-                                    <div class="box-service text-center">
-                                        <img  src="/image/service5.png" alt="logo">
-                                        <p class="mb-0">Hỏi đáp pháp luật</p>
-                                    </div>
-                                </div>
-                                <div class="col-5">
-                                    <div class="box-service text-center">
-                                        <img  src="/image/service2.png" alt="logo">
-                                        <p class="mb-0">Hồ sơ nhà đất</p>
-                                    </div>
-                                    <div class="box-service text-center">
-                                        <img  src="/image/service4.png" alt="logo">
-                                        <p class="mb-0">Khai tử </p>
-                                    </div>
-                                    <div class="box-service text-center">
-                                        <img  src="/image/service6.png" alt="logo">
-                                        <p class="mb-0">Hướng dẫn</p>
+                                    <div class="col-5">
+                                        <div class="box-service text-center">
+                                            <img src="/image/service2.png" alt="logo">
+                                            <p class="mb-0">Hồ sơ nhà đất</p>
+                                        </div>
+                                        <div class="box-service text-center">
+                                            <img src="/image/service4.png" alt="logo">
+                                            <p class="mb-0">Khai tử </p>
+                                        </div>
+                                        <div class="box-service text-center">
+                                            <img src="/image/service6.png" alt="logo">
+                                            <p class="mb-0">Hướng dẫn</p>
+                                        </div>
+                                        <div class="box-service text-center">
+                                            <img src="/image/service6.png" alt="logo">
+                                            <p class="mb-0">Hướng dẫn</p>
+                                        </div>
+                                        <div class="box-service text-center">
+                                            <img src="/image/service6.png" alt="logo">
+                                            <p class="mb-0">Hướng dẫn</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -129,6 +162,18 @@
                                     <p>Mô tả dịch vụ:</p>
                                     <textarea class="form-control" name="service-description" id=""></textarea>
                                 </div>
+                                <div class="d-flex align-items-center gap-3 mt-3">
+                                    <label style="color: #4F4F4F;" for="number-of-characters" class="mb-0">Số thứ tự:</label>
+                                    <div class="number-input-wrapper">
+                                      <a href="javascript:void(0)" onclick="changeNumber(-1)">
+                                        <i class="bi bi-dash"></i>
+                                      </a>
+                                      <input type="number" id="quantity" value="1" min="1" />
+                                      <a href="javascript:void(0)" onclick="changeNumber(1)">
+                                        <i class="bi bi-plus"></i>
+                                      </a>
+                                    </div>
+                                </div>
                                 <div class="process-time">
                                     <p>Thời gian xử lý một hồ sơ:</p>
                                     <div class="d-flex align-items-center">
@@ -137,16 +182,19 @@
                                         <input class="form-control minutes-service ms-2" type="text">
                                         <label class="ms-2" style="color: #919191;" for="minutes">phút</label>
                                         <input class="undetermined-service ms-2" type="checkbox">
-                                        <label class="ms-2" style="color: #4F4F4F;" for="undetermined">Không xác định</label>
+                                        <label class="ms-2" style="color: #4F4F4F;" for="undetermined">Không xác
+                                            định</label>
                                     </div>
                                 </div>
                                 <div class="off-service d-flex align-items-center">
                                     <input type="checkbox" class="ms-2">
-                                    <label style="color: #4F4F4F;" for="off-service" class="ms-2">Tắt dịch vụ này</label>
-                                </div>
+                                    <label style="color: #4F4F4F;" for="off-service" class="ms-2">Tắt dịch vụ
+                                        này</label>
+                                </div>                                  
                                 <div class="button-service d-flex justify-content-end">
                                     <a class="btn cancel-service me-2">Hủy</a>
-                                    <button class="btn save-service">Lưu lại</button>
+                                    <button type="button" class="btn save-service"
+                                        onclick="showToast('Thao tác thành công!', 'success')">Lưu lại</button>
                                 </div>
                             </form>
                         </div>
@@ -156,7 +204,21 @@
         </div>
     </div>
 
+    <!-- Toast Container -->
+    <div class="position-fixed bottom-0 end-0 p-3 toast-wrapper" style="z-index: 1055">
+        <div id="customToast" class="toast toast-animated align-items-center text-white bg-success border-0"
+            role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex align-items-center w-100">
+                <i class="toast-icon me-2"></i>
+                <div class="toast-body">Thông báo!</div>
+                <button type="button" class="btn-close btn-close-white ms-auto align-self-start" data-bs-dismiss="toast"
+                    aria-label="Đóng"></button>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-</html> 
+
+</html>

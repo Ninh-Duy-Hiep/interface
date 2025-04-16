@@ -24,9 +24,9 @@
         flex: 0 0 100%;
     }
 
-
     .menu {
         text-align: center;
+        min-height: 0;
     }
 
     .divider-vertical {
@@ -40,6 +40,13 @@
     .divider-vertical::before,
     .divider-vertical::after {
         display: none;
+    }
+
+    .list-news {
+        width: 100% !important;
+    }
+    .display-news {
+        margin: 0 auto !important;
     }
 }
 

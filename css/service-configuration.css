@@ -45,9 +45,13 @@
 .service {
     margin-top: 25px;
     margin-left: 40px;
+    max-height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
 }
 
-.service img {  
+.service img {
     width: 57px;
     height: 57px;
     border-radius: 50% !important;
@@ -81,14 +85,23 @@
     padding-top: 15px;
     text-align: center;
     margin: 0;
-    min-height: 48px; 
+    min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-family: "Be VietNam Pro",sans-serif;
+    font-family: "Be VietNam Pro", sans-serif;
     font-weight: 500;
     color: #4F4F4F;
+}
+
+.service::-webkit-scrollbar {
+    width: 6px;
+}
+
+.service::-webkit-scrollbar-thumb {
+    background-color: #D9D9D9;
+    border-radius: 3px;
 }
 
 .vertical-line-service {
@@ -124,10 +137,10 @@
     height: 34px;
     border: none;
     cursor: pointer;
-    display: inline-flex; 
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none; 
+    text-decoration: none;
     cursor: pointer;
     background: linear-gradient(45deg, #4DD969, #28CD56);
 }
@@ -175,6 +188,7 @@
     overflow: hidden;
     border: 1px solid #DBD6D6;
     border-radius: 5px;
+    overflow-y: auto;
 }
 
 .process-time {
@@ -247,10 +261,10 @@
     color: white;
     border-radius: 20px;
     border: none;
-    display: inline-flex; 
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none; 
+    text-decoration: none;
     cursor: pointer;
     background: linear-gradient(45deg, #418FF5, #1562F1);
 }
@@ -294,6 +308,51 @@
     margin-left: 15px;
 }
 
-.box-service + .box-service {
+.box-service+.box-service {
     margin-top: 15px;
+}
+
+.number-input-wrapper {
+    display: inline-flex;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    height: 2.5rem;
+}
+
+.number-input-wrapper a {
+    background-color: #f8f9fa;
+    padding: 0.5rem 0.5rem;
+    color: #495057;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.number-input-wrapper a:hover {
+    background-color: #e2e6ea;
+}
+
+.number-input-wrapper a:active {
+    transform: scale(0.95);
+}
+
+.number-input-wrapper input[type="number"] {
+    width: 35px;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+    padding: 0.5rem 0.25rem;
+    transition: background-color 0.2s ease;
+}
+
+.number-input-wrapper input[type="number"]::-webkit-inner-spin-button,
+.number-input-wrapper input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.number-input-wrapper input[type="number"]:focus {
+    background-color: #fff;
 }
