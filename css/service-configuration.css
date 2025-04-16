@@ -35,16 +35,8 @@
     background: linear-gradient(45deg, #418FF5, #1562F1);
 }
 
-.content-service {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
 .service {
     margin-top: 25px;
-    margin-left: 40px;
     max-height: 700px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -62,7 +54,7 @@
 
 .box-service {
     border: 1px solid #EEEEEE;
-    width: clamp(155px, 15vw, 200px);
+    width: 100%;
     height: clamp(143px, 14vw, 180px);
     justify-items: center;
     align-content: center;
@@ -107,15 +99,17 @@
 .vertical-line-service {
     width: 6px;
     border-radius: 4px;
-    margin: 20px 20px 15px 20px;
     background-color: #DBD6D6;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .display-service {
-    margin-left: 30px;
+    padding-left: 40px;
     margin-top: 25px;
     font-family: "Be Vietnam Pro", sans-serif;
-    display: none;
 }
 
 .select-image-service {
@@ -148,13 +142,11 @@
 .service-name {
     margin-top: 30px;
     width: 100%;
-    max-width: 464px;
     height: 68px;
 }
 
 .service-name input {
     width: 100%;
-    max-width: 465px;
     height: 38px;
     margin-top: 10px;
     border: 1px solid #DBD6D6;
@@ -169,7 +161,6 @@
 
 .service-description {
     width: 100%;
-    max-width: 464px;
     height: 132px;
     margin-top: 30px;
 }
@@ -182,7 +173,6 @@
 
 .service-description textarea {
     width: 100%;
-    max-width: 464px;
     height: 102px;
     resize: none;
     overflow: hidden;
@@ -273,43 +263,12 @@
     background: linear-gradient(45deg, #4DD969, #28CD56);
 }
 
-
-.service .col-5 {
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-.service .col-5 {
-    padding-right: 10px;
-    padding-left: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
 .box-service {
-    margin-right: 15px;
+    margin-right: 30px;
     margin-bottom: 25px;
     flex: 0 0 auto;
     width: 100%;
     max-width: 200px;
-}
-
-.service .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -10px;
-}
-
-.service .col-5:first-child .box-service {
-    margin-right: 15px;
-}
-
-.service .col-5:last-child .box-service {
-    margin-left: 15px;
-}
-
-.box-service+.box-service {
-    margin-top: 15px;
 }
 
 .number-input-wrapper {

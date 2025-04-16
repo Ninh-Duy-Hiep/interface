@@ -1,13 +1,12 @@
 function updateActiveMenu(url) {
   const menuMainScreen = document.querySelector(".menu-main-screen");
-  const menuServiceConfig = document.querySelector(
-    ".menu-service-configuration"
-  );
+  const menuServiceConfig = document.querySelector(".menu-service-configuration");
   const menuNewsManagement = document.querySelector(".menu-news-management");
 
   const buttonTextMain = document.querySelector(".button-text-main");
   const buttonTextService = document.querySelector(".button-text-service");
   const buttonTextNews = document.querySelector(".button-text-news");
+
 
   if (url.includes("main-screen")) {
     menuMainScreen.classList.add("active");
@@ -17,6 +16,7 @@ function updateActiveMenu(url) {
     buttonTextMain.classList.add("active");
     buttonTextService.classList.remove("active");
     buttonTextNews.classList.remove("active");
+
   } else if (url.includes("service-configuration")) {
     menuServiceConfig.classList.add("active");
     menuMainScreen.classList.remove("active");
@@ -25,6 +25,7 @@ function updateActiveMenu(url) {
     buttonTextService.classList.add("active");
     buttonTextMain.classList.remove("active");
     buttonTextNews.classList.remove("active");
+
   } else if (url.includes("news-management")) {
     menuNewsManagement.classList.add("active");
     menuMainScreen.classList.remove("active");
@@ -33,11 +34,15 @@ function updateActiveMenu(url) {
     buttonTextNews.classList.add("active");
     buttonTextMain.classList.remove("active");
     buttonTextService.classList.remove("active");
+
   } else {
     menuMainScreen.classList.remove("active");
     menuServiceConfig.classList.remove("active");
+    menuNewsManagement.classList.remove("active");
+
     buttonTextMain.classList.remove("active");
     buttonTextService.classList.remove("active");
+    buttonTextNews.classList.remove("active");
   }
 }
 
@@ -47,12 +52,10 @@ function initializePageEvents() {
   const btnNews = document.querySelector(".button-text-news");
 
   const mainScreen = document.querySelector(".main-screen");
-  const serviceContainer = document.querySelector(
-    ".container-service-configuration"
-  );
+  const serviceContainer = document.querySelector(".container-service-configuration");
   const newsScreen = document.querySelector(".container-news-management");
 
-  if (btnMain && btnService && btnNews) {
+  if (btnMain && btnService && btnNews && btnAccount) {
     btnMain.addEventListener("click", function () {
       resetDropdown();
       const selectedImage = document.querySelector("#selected-image");
@@ -144,6 +147,7 @@ function initializePageEvents() {
           checkbox.checked = false;
         });
     });
+
   }
 
   const serviceBoxes = document.querySelectorAll(".box-service");
@@ -176,8 +180,8 @@ function initializePageEvents() {
 
           if (hourInput) hourInput.value = "";
           if (minutesInput) minutesInput.value = "";
-          if (undeterminedCheckbox) undeterminedCheckbox.checked = false; 
-          
+          if (undeterminedCheckbox) undeterminedCheckbox.checked = false;
+
           const quantityInput = document.querySelector("#quantity");
           if (quantityInput) quantityInput.value = 1;
 
@@ -249,7 +253,7 @@ function resetDropdown() {
   }
 }
 
-const defaultImageSrc ="../image/cam.png";
+const defaultImageSrc = "../image/cam.png";
 
 function selectFirstServiceBox() {
   const serviceBoxes = document.querySelectorAll(".box-service");
@@ -286,9 +290,9 @@ function selectFirstServiceBox() {
   }
 }
 
-// updown number 
+// updown number
 function changeNumber(delta) {
-  const input = document.getElementById('quantity');
+  const input = document.getElementById("quantity");
   let current = parseInt(input.value) || 1;
   const min = parseInt(input.min) || 1;
   const newValue = current + delta;
@@ -356,5 +360,3 @@ function showToast(message = "Thông báo!", type = "success") {
 
   toast.show();
 }
-
-

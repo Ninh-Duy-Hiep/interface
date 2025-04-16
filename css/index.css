@@ -23,7 +23,7 @@ html {
 .container-fluid {
     max-width: 1490px;
     width: 100%;
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 0 15px;
 }
 
@@ -144,7 +144,8 @@ html {
 
 .menu-main-screen,
 .menu-service-configuration,
-.menu-news-management {
+.menu-news-management,
+.menu-account-management {
     /* margin-top: 20px; */
     text-decoration: none;
 }
@@ -162,7 +163,8 @@ html {
 
 .text-main-1,
 .text-service-1,
-.text-news-1 {
+.text-news-1,
+.text-account-1 {
     font-weight: 500;
     font-size: 15px;
     color: #1A1B23;
@@ -170,7 +172,8 @@ html {
 
 .text-main-2,
 .text-service-2,
-.text-news-2 {
+.text-news-2,
+.text-account-2 {
     font-weight: 400;
     font-size: 10px;
     color: #919191;
@@ -190,7 +193,8 @@ html {
 
 .button-text-main,
 .button-text-service,
-.button-text-news {
+.button-text-news,
+.button-text-account {
     color: #919191;
     width: 25px;
     height: 25px;
@@ -201,7 +205,8 @@ html {
 
 .button-text-service.active,
 .button-text-main.active,
-.button-text-news.active {
+.button-text-news.active,
+.button-text-account.active {
     background-color: #28CD56;
     color: white;
 }
