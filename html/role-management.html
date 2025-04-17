@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ thống đăng kí dịch vụ một cửa SOSR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/role-management.css" />
+</head>
+
+<body>
+
+    <header class="header bg-light">
+        <div class="container-fluid px-0">
+            <div class="row align-items-center mx-0">
+                <div class="header-left col-12 col-lg-6 d-flex align-items-center mb-3 mb-md-0">
+                    <div class="logo-wrapper me-3">
+                        <img src="/image/logo-header.png" alt="Logo" class="logo" />
+                    </div>
+                    <div class="header-text d-flex flex-column">
+                        <p class="header-title mb-0">
+                            HỆ THỐNG ĐĂNG KÍ DỊCH VỤ MỘT CỬA <span class="text-dark">SOSR</span>
+                        </p>
+                        <span class="address">PHƯỜNG QUANG TRUNG - TỈNH NGHỆ AN</span>
+                    </div>
+                </div>
+
+                <div
+                    class="header-right col-12 col-lg-6 d-flex justify-content-md-end justify-content-center align-items-center gap-3">
+                    <button class="btn logout-btn">Thoát</button>
+                    <div class="user-info d-flex flex-column align-items-center text-center">
+                        <div class="user-avatar-wrapper mb-1">
+                            <img src="/image/avatar-header.png" alt="Avatar" class="user-avatar" />
+                        </div>
+                        <span class="text-nowrap">Nguyễn Văn A</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid mt-2">
+        <div class="row main-layout">
+            <!-- side bar -->
+            <aside class="col-2 menu position-relative">
+                <a href="#" class="menu-main-screen d-flex justify-content-between mb-3">
+                    <div class="text-main">
+                        <p class="text-main-1 mb-0">Màn hình chính</p>
+                        <p class="text-main-2 mb-0">Danh sách hàng đợi chờ xử lý</p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-main" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
+                <a href="#" class="menu-service-configuration d-flex justify-content-between mb-3">
+                    <div class="text-service">
+                        <p class="text-service-1 mb-0">Cấu hình dịch vụ</p>
+                        <p class="text-service-2 mb-0">
+                            Danh sách các dịch vụ trực tuyến
+                        </p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-service" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
+                <a href="#" class="menu-news-management d-flex justify-content-between mb-3">
+                    <div class="text-news">
+                        <p class="text-news-1 mb-0">Quản lý tin tức</p>
+                        <p class="text-news-2 mb-0">
+                            Tin tức hiển thị trên trang chủ
+                        </p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-news" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
+                <a href="#" class="menu-news-management d-flex justify-content-between mb-3">
+                    <div class="text-account">
+                        <p class="text-news-1 mb-0">Quản lý tài khoản</p>
+                        <p class="text-news-2 mb-0">
+                            Danh sách người dùng
+                        </p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-news" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
+                <a href="#" class="menu-news-management d-flex justify-content-between mb-3">
+                    <div class="text-account">
+                        <p class="text-news-1 mb-0">Quản lý vai trò</p>
+                        <p class="text-news-2 mb-0">
+                            Danh sách vai trò người dùng
+                        </p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-news active" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
+                <div class="divider-vertical px-0"></div>
+            </aside>
+
+
+            <!-- display -->
+            <main class="col-10 display-container">
+                <div class="container-role-management">
+                    <div class="header-news d-flex justify-content-between align-items-center">
+                        <p class="mb-0">Quản lý vai trò người dùng</p>
+                        <button class="btn">Thêm mới</button>
+                    </div>
+
+                    <div class="container">
+                        <div class="row mt-4">
+                            <!-- list -->
+                            <div class="list-news col-md-5 position-relative d-flex flex-column">
+                                <!-- news -->
+                                <div id="list-content-container">
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Quản trị viên</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Nhân viên 1 cửa</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Soạn thảo bài viết</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Quản trị viên</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Nhân viên 1 cửa</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Soạn thảo bài viết</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Quản trị viên</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Nhân viên 1 cửa</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Soạn thảo bài viết</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Quản trị viên</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Nhân viên 1 cửa</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Soạn thảo bài viết</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Quản trị viên</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Nhân viên 1 cửa</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Soạn thảo bài viết</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Quản trị viên</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Nhân viên 1 cửa</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content d-flex mb-1 " id="news-template">
+                                        <div class="card-body">
+                                            <p class="card-text-1 mb-2">Soạn thảo bài viết</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="card-text-2">Tạo ngày: 21/04/2025 - Quyền: Admin</span>
+                                                <input class="news-checkbox" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="divider-line"></div>
+                            </div>
+
+
+                            <!-- Display content -->
+                            <div class="col-md-7 display-news px-4">
+                                <form action="">
+                                    <div class="mt-3">
+                                        <label class="mb-2">Tên vai trò:</label>
+                                        <input type="text" class="form-control" id="account-name">
+                                    </div>
+                                    <div class="mt-3">
+                                        <label class="mb-2">Mô tả:</label>
+                                        <input type="text" class="form-control" id="service-description">
+                                    </div>
+                                    <div class="content-checkbox mt-3">
+                                        <p>Chọn quyền:</p>
+                                        <div class="d-flex">
+                                            <div class="ms-5 mx-auto mt-3">
+                                                <div class="d-flex gap-3 publish-articles">
+                                                    <input type="checkbox">
+                                                    <label for="">Quản trị người dùng</label>
+                                                </div>
+                                                <div class="d-flex gap-3 mt-4 publish-articles">
+                                                    <input type="checkbox">
+                                                    <label for="">Xử lý hồ sơ 1 cửa</label>
+                                                </div>
+                                                <div class="d-flex gap-3 mt-4 publish-articles">
+                                                    <input type="checkbox">
+                                                    <label for="">Xem lịch sử người dùng</label>
+                                                </div>
+                                            </div>
+                                            <div class="ms-5 mx-auto mt-3">
+                                                <div class="d-flex gap-3 publish-articles">
+                                                    <input type="checkbox">
+                                                    <label for="">Soạn thảo bài viết</label>
+                                                </div>
+                                                <div class="d-flex gap-3 mt-4 publish-articles">
+                                                    <input type="checkbox">
+                                                    <label for="">Sửa bài viết</label>
+                                                </div>
+                                                <div class="d-flex gap-3 mt-4 publish-articles">
+                                                    <input type="checkbox">
+                                                    <label for="">Xóa bài viết</label>
+                                                </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-checkbox mt-3">
+                                        <p>Trạng thái:</p>
+                                        <div class="d-flex gap-3 ms-5 mt-3 publish-articles">
+                                            <input type="checkbox">
+                                            <label for="">Hoạt động</label>
+                                        </div>
+                                    </div>
+                                    <div class="button-news d-flex justify-content-end gap-3">
+                                        <a class="btn cancel-news me-2">Hủy</a>
+                                        <button type="button" class="btn save-news"
+                                            onclick="showToast('Thao tác thành công!', 'success')">Lưu lại</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Toast Container -->
+    <div class="position-fixed bottom-0 end-0 p-3 toast-wrapper" style="z-index: 1055">
+        <div id="customToast" class="toast toast-animated align-items-center text-white bg-success border-0"
+            role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex align-items-center w-100">
+                <i class="toast-icon me-2"></i>
+                <div class="toast-body">Thông báo!</div>
+                <button type="button" class="btn-close btn-close-white ms-auto align-self-start" data-bs-dismiss="toast"
+                    aria-label="Đóng"></button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="../js/role-management.js"></script>
+
+</body>
+
+</html>
