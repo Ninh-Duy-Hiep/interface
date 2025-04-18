@@ -111,6 +111,21 @@
 .modal .form-control {
     color: #1A1B23;
 }
+
+#detail {
+    max-height: 200px;        
+    overflow-y: auto;
+    padding-right: 8px;       
+    white-space: pre-wrap;    
+    word-break: break-word;
+}
+#detail::-webkit-scrollbar {
+    width: 6px;
+}
+#detail::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 3px;
+}
 /* Responsive */
 @media (max-width: 992px) {
     .custom-modal {
