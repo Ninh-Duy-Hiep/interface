@@ -118,6 +118,8 @@
     padding-right: 8px;       
     white-space: pre-wrap;    
     word-break: break-word;
+    font-weight: 400;
+    color: #000000;
 }
 #detail::-webkit-scrollbar {
     width: 6px;

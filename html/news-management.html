@@ -7,11 +7,11 @@
     <title>Cấu hình dịch vụ - Hệ thống đăng kí dịch vụ một cửa SOSR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/news-management.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -81,6 +81,17 @@
                         <ion-icon class="button-text-news" name="chevron-forward-outline"></ion-icon>
                     </div>
                 </a>
+                <a href="account-management.html" class="menu-account-management d-flex justify-content-between mb-3">
+                    <div class="text-account">
+                        <p class="text-account-1 mb-0">Quản lý tài khoản</p>
+                        <p class="text-account-2 mb-0">
+                            Danh sách người dùng
+                        </p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-account" name="chevron-forward-outline"></ion-icon>
+                    </div>  
+                </a>
                 <div class="divider-vertical px-0"></div>
             </aside>
 
@@ -98,7 +109,7 @@
                             <div class="list-news col-md-4 position-relative px-3 d-flex flex-column">
                                 <!-- news -->
                                 <div id="list-news-container">
-                                    <div class="card-news d-flex mb-3 d-none" id="news-template">
+                                    <div class="card-news d-flex mb-3" id="news-template">
                                         <img src="" class="img-fluid" alt="Tin tức">
                                         <div class="card-body">
                                             <p class="card-text-1 mb-2"></p>
@@ -156,7 +167,6 @@
 
                                 <div class="divider-line"></div>
                             </div>
-
 
                             <!-- Display content -->
                             <div class="col-md-8 display-news px-4">
