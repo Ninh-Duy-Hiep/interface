@@ -340,7 +340,7 @@
                                         </div>
                                     </div>
                                     <div class="button-news d-flex justify-content-end gap-3">
-                                        <a class="btn cancel-news me-2">Hủy</a>
+                                        <a class="btn cancel-news me-2" data-bs-toggle="modal" data-bs-target="#confirmModal">Hủy</a>
                                         <button type="button" class="btn save-news"
                                             onclick="showToast('Thao tác thành công!', 'success')">Lưu lại</button>
                                     </div>
@@ -362,6 +362,24 @@
                 <div class="toast-body">Thông báo!</div>
                 <button type="button" class="btn-close btn-close-white ms-auto align-self-start" data-bs-dismiss="toast"
                     aria-label="Đóng"></button>
+            </div>
+        </div>
+    </div>
+    <!--Modal confirm -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Xác nhận hủy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn hủy tin này không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="no-confirm"  data-bs-dismiss="modal">Không</button>
+                    <button type="button" class="yes-confirm" id="confirmDelete" onclick="showToast('Thao tác thành công!', 'success')">Xác nhận</button>
+                </div>
             </div>
         </div>
     </div>

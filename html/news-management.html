@@ -81,17 +81,6 @@
                         <ion-icon class="button-text-news" name="chevron-forward-outline"></ion-icon>
                     </div>
                 </a>
-                <a href="account-management.html" class="menu-account-management d-flex justify-content-between mb-3">
-                    <div class="text-account">
-                        <p class="text-account-1 mb-0">Quản lý tài khoản</p>
-                        <p class="text-account-2 mb-0">
-                            Danh sách người dùng
-                        </p>
-                    </div>
-                    <div class="icon-wrapper">
-                        <ion-icon class="button-text-account" name="chevron-forward-outline"></ion-icon>
-                    </div>  
-                </a>
                 <div class="divider-vertical px-0"></div>
             </aside>
 
@@ -109,7 +98,7 @@
                             <div class="list-news col-md-4 position-relative px-3 d-flex flex-column">
                                 <!-- news -->
                                 <div id="list-news-container">
-                                    <div class="card-news d-flex mb-3" id="news-template">
+                                    <div class="card-news d-flex mb-3 d-none" id="news-template">
                                         <img src="" class="img-fluid" alt="Tin tức">
                                         <div class="card-body">
                                             <p class="card-text-1 mb-2"></p>
@@ -121,9 +110,9 @@
                                     </div>
                                 </div>
 
-                                <div class="footer-news mt-auto mb-1 d-flex justify-content-between flex-lg-wrap">
+                                <div class="footer-news mt-auto mb-1 d-flex justify-content-between flex-column">
                                     <!-- filter the news -->
-                                    <div class="footer-choose-news mt-1 mb-1 ms-1">
+                                    <div class="footer-choose-news mt-1 mb-1 ms-1 mx-1">
                                         <p id="footer-selected-news" class="mb-0">Chọn nhóm tin</p>
                                         <div class="dropdown-footer ms-auto dropup">
                                             <a class="btn btn-outline-secondary dropdown-toggle p-2 d-flex align-items-center"
@@ -144,10 +133,10 @@
                                         </div>
                                     </div>
                                     <!-- pagination -->
-                                    <div class="mt-1">
-                                        <ul class="pagination"  id="pagination">
-                                            <li class="page-item" id="prev-button">
-                                                <a class="page-link" href="#"> <i class="bi bi-chevron-left"></i> </a>
+                                    <div class="container-pagination mt-1 ms-auto mx-auto">
+                                        <ul class="pagination fixed-pagination justify-content-center" id="pagination">
+                                            <li class="page-item" id="prev-btn">
+                                                <a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
                                             </li>
                                             <li class="page-item" id="page-1">
                                                 <a class="page-link" href="#">1</a>
@@ -215,7 +204,7 @@
                                         <label style="color: #4F4F4F;" for="" class="ms-3">Xuất bản bài viết</label>
                                     </div>
                                     <div class="button-news d-flex justify-content-end">
-                                        <a class="btn cancel-news me-2">Hủy</a>
+                                        <a class="btn cancel-news me-2" data-bs-toggle="modal" data-bs-target="#confirmModal">Hủy</a>
                                         <button type="button" class="btn save-news"
                                             onclick="showToast('Thao tác thành công!', 'success')">Lưu lại</button>
                                     </div>
@@ -237,6 +226,25 @@
                 <div class="toast-body">Thông báo!</div>
                 <button type="button" class="btn-close btn-close-white ms-auto align-self-start" data-bs-dismiss="toast"
                     aria-label="Đóng"></button>
+            </div>
+        </div>
+    </div>
+    <!--Modal confirm -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Xác nhận hủy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn hủy tin này không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="no-confirm" data-bs-dismiss="modal">Không</button>
+                    <button type="button" class="yes-confirm" id="confirmDelete"
+                        onclick="showToast('Thao tác thành công!', 'success')">Xác nhận</button>
+                </div>
             </div>
         </div>
     </div>

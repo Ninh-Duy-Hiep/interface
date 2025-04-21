@@ -35,137 +35,14 @@ const quill = new Quill("#editor", {
   },
 });
 
-// create fake data
-const newsList = [
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo triển khai phun thuốc phòng chống dịch',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo từ hội phụ nữ về phong trào tự quản trên địa bàn phường',
-    date: '20/04/2025',
-    author: 'Hội Phụ Nữ QT'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Hưởng ứng ngày 30/04 thống nhất đất nước',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-  {
-    image: '../image/news1.png',
-    title: 'Thông báo 11',
-    date: '20/04/2025',
-    author: 'Admin'
-  },
-]
+const newsList = Array.from({length: 20}, (_, i) => ({
+  image: '../image/news1.png',
+  title: `Tin tức ${i + 1}`,
+  date: '20/04/2025',
+  author: 'Admin'
+}));
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 5;
 let currentPage = 1;
 let selectedTitle = "";
 
@@ -199,55 +76,145 @@ function renderTours() {
 function updatePaginationState() {
   const filtered = getFilteredList();
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  const paginationContainer = document.getElementById("pagination");
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
 
-  document.getElementById("prev-button").classList.toggle("disabled", currentPage === 1);
-  document.getElementById("next-button").classList.toggle("disabled", currentPage === totalPages || totalPages === 0);
+  if (totalPages <= 1) {
+    paginationContainer.style.display = "none";
+    return;
+  } else {
+    paginationContainer.style.display = "flex";
+  }
 
-  document.getElementById("page-1").classList.toggle("active", currentPage === 1);
-  document.getElementById("page-last").classList.toggle("active", currentPage === totalPages);
+  prevBtn.classList.toggle("disabled", currentPage === 1);
+  nextBtn.classList.toggle("disabled", currentPage === totalPages);
 
-  document.getElementById("dots").setAttribute("data-page", currentPage);
+  prevBtn.onclick = () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderTours();
+      updatePaginationState();
+    }
+  };
 
-  document.getElementById("page-last").querySelector("a").textContent = totalPages;
+  nextBtn.onclick = () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderTours();
+      updatePaginationState();
+    }
+  };
+
+  const existingPages = paginationContainer.querySelectorAll(".page-item:not(#prev-btn):not(#next-btn)");
+  existingPages.forEach(el => el.remove());
+
+  const pages = getPageList(currentPage, totalPages);
+  pages.forEach(page => {
+    const li = document.createElement("li");
+    li.className = "page-item";
+    if (page === "...") {
+      li.classList.add("disabled");
+      li.innerHTML = `<span class="page-link">...</span>`;
+    } else {
+      if (page === currentPage) li.classList.add("active");
+      const a = document.createElement("a");
+      a.className = "page-link";
+      a.href = "#";
+      a.textContent = page;
+      a.onclick = () => {
+        currentPage = page;
+        renderTours();
+        updatePaginationState();
+      };
+      li.appendChild(a);
+    }
+    paginationContainer.insertBefore(li, nextBtn);
+  });
 }
-// click pre , next
-document.getElementById("prev-button").onclick = () => {
-  if (currentPage > 1) {
-    currentPage--;
-    renderTours();
-    updatePaginationState();
-    updateDividerLine()
+
+
+
+function getPageList(current, total) {
+  const range = [];
+
+  if (total <= 7) {
+    for (let i = 1; i <= total; i++) {
+      range.push(i);
+    }
+  } else {
+    if (current <= 4) {
+      for (let i = 1; i <= 5; i++) {
+        range.push(i);
+      }
+      range.push("...");
+      range.push(total);
+    }
+    else if (current >= total - 3) {
+      range.push(1);
+      range.push("...");
+      for (let i = total - 4; i <= total; i++) {
+        range.push(i);
+      }
+    } 
+    else {
+      range.push(1);
+      range.push("...");
+      for (let i = current - 1; i <= current + 1; i++) {
+        range.push(i);
+      }
+      range.push("...");
+      range.push(total);
+    }
   }
-};
-document.getElementById("next-button").onclick = () => {
-  const filtered = getFilteredList();
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-  if (currentPage < totalPages) {
-    currentPage++;
-    renderTours();
-    updatePaginationState();
-    updateDividerLine()
+
+  return range;
+}
+
+function createPaginationItem(page, disabled = false, active = false) {
+  const li = document.createElement("li");
+  li.className = "page-item";
+
+  if (disabled) li.classList.add("disabled");
+  if (active) li.classList.add("active");
+
+  const a = document.createElement("a");
+  a.className = "page-link";
+  a.href = "#";
+
+  if (page === "prev") {
+    a.innerHTML = '<i class="bi bi-chevron-left"></i>';
+    a.onclick = () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderTours();
+        updatePaginationState();
+      }
+    };
+  } else if (page === "next") {
+    a.innerHTML = '<i class="bi bi-chevron-right"></i>';
+    a.onclick = () => {
+      const totalPages = Math.ceil(getFilteredList().length / ITEMS_PER_PAGE);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderTours();
+        updatePaginationState();
+      }
+    };
+  } else {
+    a.textContent = page;
+    a.onclick = () => {
+      currentPage = page;
+      renderTours();
+      updatePaginationState();
+    };
   }
-};
-document.getElementById("page-1").onclick = () => {
-  if (currentPage !== 1) {
-    currentPage = 1;
-    renderTours();
-    updatePaginationState();
-    updateDividerLine()
-  }
-};
-document.getElementById("page-last").onclick = () => {
-  const filtered = getFilteredList();
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-  if (currentPage !== totalPages) {
-    currentPage = totalPages;
-    renderTours();
-    updatePaginationState();
-    updateDividerLine()
-  }
-};
-// first load
+
+  li.appendChild(a);
+  return li;
+}
+
+// First load
 renderTours();
 updatePaginationState();
 updateDividerLine()

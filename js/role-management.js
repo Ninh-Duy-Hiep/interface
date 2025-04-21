@@ -85,3 +85,8 @@ function showToast(message = "Thông báo!", type = "success") {
 
   toast.show();
 }
+
+document.getElementById('confirmDelete').addEventListener('click', function () {
+  const confirmModal = bootstrap.Modal.getInstance(document.getElementById('confirmModal'));
+  confirmModal.hide();
+});

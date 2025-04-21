@@ -82,17 +82,6 @@
                         <ion-icon class="button-text-news" name="chevron-forward-outline"></ion-icon>
                     </div>
                 </a>
-                <a href="account-management.html" class="menu-account-management d-flex justify-content-between mb-3">
-                    <div class="text-account">
-                        <p class="text-account-1 mb-0">Quản lý tài khoản</p>
-                        <p class="text-account-2 mb-0">
-                            Danh sách người dùng
-                        </p>
-                    </div>
-                    <div class="icon-wrapper">
-                        <ion-icon class="button-text-account" name="chevron-forward-outline"></ion-icon>
-                    </div>
-                </a>
                 <div class="divider-vertical p-0"></div>
             </aside>
 
@@ -194,7 +183,8 @@
                                             <label class="ms-2" style="color: #919191;" for="hour">giờ</label>
                                             <input class="form-control minutes-service ms-2" type="text">
                                             <label class="ms-2" style="color: #919191;" for="minutes">phút</label>
-                                            <input class="undetermined-service ms-2" type="checkbox">
+                                                <input class="undetermined-service ms-2" type="checkbox"
+                                                    id="undetermined-checkbox">
                                             <label class="ms-2" style="color: #4F4F4F;" for="undetermined">Không xác
                                                 định</label>
                                         </div>
@@ -205,7 +195,7 @@
                                             này</label>
                                     </div>
                                     <div class="button-service d-flex justify-content-end">
-                                        <a class="btn cancel-service me-2">Hủy</a>
+                                            <a class="btn cancel-service me-2" data-bs-toggle="modal" data-bs-target="#confirmModal">Hủy</a>
                                         <button type="button" class="btn save-service"
                                             onclick="showToast('Thao tác thành công!', 'success')">Lưu lại</button>
                                     </div>
@@ -230,9 +220,48 @@
             </div>
         </div>
     </div>
+    <!--Modal confirm -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Xác nhận hủy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn hủy tin này không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="no-confirm"  data-bs-dismiss="modal">Không</button>
+                    <button type="button" class="yes-confirm" id="confirmDelete" onclick="showToast('Thao tác thành công!', 'success')">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- update disabled hour and minutes when user click checkbox undetermined -->
+    <script>
+        document.getElementById('undetermined-checkbox').addEventListener('change', function () {
+            const hourInput = document.querySelector('.hour-service');
+            const minutesInput = document.querySelector('.minutes-service');
+
+            if (this.checked) {
+                hourInput.disabled = true;
+                minutesInput.disabled = true;
+            } else {
+                hourInput.disabled = false;
+                minutesInput.disabled = false;
+            }
+        });
+        // open modal confirm 
+        document.getElementById('confirmDelete').addEventListener('click', function () {
+        const confirmModal = bootstrap.Modal.getInstance(document.getElementById('confirmModal'));
+        confirmModal.hide();
+        });
+    </script>
 </body>
 
 </html>

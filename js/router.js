@@ -360,3 +360,24 @@ function showToast(message = "Thông báo!", type = "success") {
 
   toast.show();
 }
+
+// open modal confirm and modal process
+function openConfirmModal() {
+  const confirmModal = new bootstrap.Modal(
+    document.getElementById("confirmModal")
+  );
+  confirmModal.show();
+}
+
+document.getElementById("confirmDelete").addEventListener("click", function () {
+  const confirmModalEl = document.getElementById("confirmModal");
+  const processModalEl = document.getElementById("processModal");
+
+  const confirmModal = bootstrap.Modal.getInstance(confirmModalEl);
+  const processModal = bootstrap.Modal.getInstance(processModalEl);
+
+  confirmModal.hide();
+  processModal.hide();
+
+  showToast("Thao tác thành công!", "success");
+});
