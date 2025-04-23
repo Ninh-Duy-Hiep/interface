@@ -1,189 +1,117 @@
-.modal {
-    background-color: transparent !important;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 500;
-}
-
-.modal-dialog {
-    z-index: 1050;
-}
-
-.modal.fade:not(.show) {
-    display: none;
-}
-
-.modal.show {
-    display: block;
-}
-
-.modal-backdrop {
-    z-index: 1040;
-}
-
-.modal-header {
-    background-color: #EEEEEE;
-}
-
-
-.modal-header img {
-    width: 2rem;
-    height: auto;
-    cursor: pointer;
-}
-.custom-modal {
-    width: 90%;
-    max-width: 913px;
-    margin: 1.75rem auto;
-}
-
-.custom-modal .modal-content {
-    min-height: 450px;
-    height: auto;
+.modal-content {
     border: 1px solid #DBD6D6 !important;
 }
+.modal-content p {
+    margin-bottom: 0 !important;
+}
+.modal-header {
+    background-color: #EEEEEE;
+}  
+.modal-title {
+    font-family: "Be VietNam pro",sans-serif;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+} 
 
-.modal-body {   
-    overflow-y: auto;
+.modal-body label {
+    font-family: "Be VietNam pro",sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #1A1B23;
+}
+
+#citizenAddress {
+    font-family: "Be VietNam pro",sans-serif;
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #1A1B23;
 }
 
 .custom-textarea {
     resize: none;
-    height: 254px;
+    height: 225px;
 }
 
-.custom-modal-footer {
-    border: none !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.note-footer  {
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 400;
-    font-size: 12px;
+.note-footer p{
     color: #919191;
+    font-family: "Be VietNam pro",sans-serif;
+    font-weight: 400;
+    font-size: 10px;
 }
 
-.custom-cancel-btn {
-    width: 6rem;
-    height: 2.5rem;
-    border-radius: 20px;
+.modal-footer button,
+.modal-footer a
+{
+    font-family: "Be VietNam pro",sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #FFFFFF;
+    width: 96px;
+    height: 34px;
     border: none;
-    color: white;
-    background: linear-gradient(45deg, #418FF5, #1562F1);
+    border-radius: 20px;
 }
 
-.custom-save-btn {
-    width: 6rem;
-    height: 2.5rem;
-    border-radius: 20px;
-    border: none;
-    color: white;
-    background: linear-gradient(45deg, #4DD969, #28CD56);
-}
-
-.custom-close-btn {
-    width: 6rem;
-    height: 2.5rem;
-    border-radius: 20px;
-    border: none;
-    color: white;
-    background: linear-gradient(45deg, #85A5CD, #4E6AA0);
+.modal-footer a {
+    text-decoration: none;
     display: inline-flex; 
     justify-content: center;
     align-items: center;
-    text-decoration: none; 
     cursor: pointer;
 }
 
-.form-label {
-    white-space: nowrap;
+.custom-cancel-btn {
+    background: linear-gradient(90deg, #418FF5 0%, #1562F1 100%);
 }
 
-#citizenAddress {
-    flex: 1;
+.custom-save-btn {
+    background: linear-gradient(90deg, #4DD969 0%, #28CD56 100%);
 }
 
-.modal .form-control {
-    color: #1A1B23;
+.custom-close-btn {
+    background: linear-gradient(90deg, #85A5CD 0%, #4E6AA0 100%);
 }
 
-#detail {
-    max-height: 200px;        
-    overflow-y: auto;
-    padding-right: 8px;       
-    white-space: pre-wrap;    
-    word-break: break-word;
+
+/* confirm modal */
+.confirm-modal .modal-title {
+    font-family: "Be VietNam pro",sans-serif;
+    color: #000000;
+    font-size: 20px;
     font-weight: 400;
+}
+
+.confirm-modal .modal-body span,
+.confirm-modal .modal-body p {
+    font-family: "Be VietNam pro",sans-serif;
+    font-weight: 400;
+    font-size: 20px;
     color: #000000;
 }
-#detail::-webkit-scrollbar {
-    width: 6px;
-}
-#detail::-webkit-scrollbar-thumb {
-    background-color: #c1c1c1;
-    border-radius: 3px;
-}
-/* Responsive */
-/* @media (max-width: 992px) {
-    .custom-modal {
-        width: 95%;
-        margin: 1rem auto;
-    }
+
+.confirm-modal #confirm-location {
+    font-size: 16px;
 }
 
-@media (max-width: 576px) {
-    .custom-modal {
-        width: 98%;
-        margin: 0.5rem auto;
-    }
-
-    .modal-body {
-        padding: 1rem;
-    }
+.confirm-modal .no-confirm,
+.confirm-modal .yes-confirm 
+{
+    border: none;
+    width: 85px;
+    height: 35px;
+    border-radius: 20px;
+    color: white;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
 }
 
-@media (min-width: 1550px) {
-    .custom-modal {
-        max-width: 1200px;
-        height: 900px;
-    }
-
-    .modal-content {
-        height: 600px;
-    }
-
-    .modal-header {
-        padding: 1.5rem 2rem;
-    }
-
-    .modal-body {
-        padding: 2rem;
-    }
-
-    .modal-footer {
-        padding: 1.5rem 2rem;
-    }
-
-    .modal-title {
-        font-size: 1.5rem;
-    }
-
-    .form-control {
-        padding: 0.75rem 1rem;
-        font-size: 1.1rem;
-    }
-
-    .form-label {
-        font-size: 1.1rem;
-    }
-
-    .modal-footer .btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 1.1rem;
-    }
-} */
+.confirm-modal .no-confirm {
+    background: linear-gradient( #85A5CD 0%, #4E6AA0 100%);
+}
+.confirm-modal .yes-confirm {
+    background: linear-gradient( #4DD969 0%, #28CD56 100%);
+}

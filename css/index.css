@@ -139,7 +139,8 @@ html {
 
 .menu {
     font-family: "Be Vietnam Pro", sans-serif;
-    min-height: 800px;
+    /* min-height: 800px; */
+    min-height: 700px;
 }
 
 .menu-main-screen,
@@ -287,23 +288,3 @@ html {
     animation: toastFadeOut 0.4s ease forwards !important;
 }
 
-/* Modal confirm */
-.no-confirm,
-.yes-confirm 
-{
-    border: none;
-    width: 85px;
-    height: 35px;
-    border-radius: 20px;
-    color: white;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-}
-
-.no-confirm {
-    background: linear-gradient(45deg, #418FF5, #1562F1);
-}
-.yes-confirm {
-    background: linear-gradient(45deg, #4DD969, #28CD56);
-}
