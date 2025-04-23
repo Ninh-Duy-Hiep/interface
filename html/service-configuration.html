@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cấu hình dịch vụ - Hệ thống đăng kí dịch vụ một cửa SOSR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/service-configuration.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-    <script src="../js/router.js"></script>
+
 </head>
 
 <body>
@@ -46,7 +45,7 @@
         </div>
     </header>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-2 mb-3">
         <div class="row main-layout">
             <!-- side bar -->
             <aside class="col-2 menu position-relative">
@@ -90,178 +89,112 @@
                 <div class="container-service-configuration show">
                     <div class="header-service d-flex justify-content-between align-items-center">
                         <p class="mb-0">Cấu hình dịch vụ</p>
-                        <button class="btn" onclick="showToast('Thao tác thành công!', 'success')">Thêm mới</button>
+                        <button onclick="showToast('Thao tác thành công!', 'success')">Thêm mới</button>
                     </div>
                     <!-- <hr> -->
-                    <div class="row">
+                    <div class="row" style="height: 700px;">
                         <div class="container-fluid content-service">
                             <div class="row">
                                 <div class="col-md-5 service">
-                                  <div class="service-container">
-                                    <div class="row">
-                                      <div class="col-6 px-4">
-                                        <div class="box-service text-center">
-                                          <img src="/image/service1.png" alt="logo">
-                                          <p class="mb-0">Tạm trú tạm vắng</p>
+                                    <div class="service-container">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="my-3 mx-auto box-service text-center">
+                                                    <div class="image-service">
+                                                        <img src="/image/service1.png" alt="logo">
+                                                    </div>
+                                                    <p class="mb-0">Tạm trú tạm vắng</p>
+                                                </div>
+                                                <div class="my-3 mx-auto box-service text-center">
+                                                    <div class="image-service">
+                                                        <img src="/image/service3.png" alt="logo">
+                                                    </div>
+                                                    <p class="mb-0">Khai sinh</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="my-3 mx-auto box-service text-center">
+                                                    <div class="image-service">
+                                                        <img src="/image/service2.png" alt="logo">
+                                                    </div>
+                                                    <p class="mb-0">Hồ sơ nhà đất</p>
+                                                </div>
+                                                <div class="my-3 mx-auto box-service text-center">
+                                                    <div class="image-service">
+                                                        <img src="/image/service4.png" alt="logo">
+                                                    </div>
+                                                    <p class="mb-0">Khai tử</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="box-service text-center">
-                                          <img src="/image/service3.png" alt="logo">
-                                          <p class="mb-0">Khai sinh</p>
-                                        </div>
-                                        <div class="box-service text-center">
-                                          <img src="/image/service5.png" alt="logo">
-                                          <p class="mb-0">Hỏi đáp pháp luật</p>
-                                        </div>
-                                        <div class="box-service text-center">
-                                          <img src="/image/service5.png" alt="logo">
-                                          <p class="mb-0">Hỏi đáp pháp luật</p>
-                                        </div>
-                                        <div class="box-service text-center">
-                                          <img src="/image/service5.png" alt="logo">
-                                          <p class="mb-0">Hỏi đáp pháp luật</p>
-                                        </div>
-                                      </div>
-                                      <div class="col-6 px-4">
-                                        <div class="box-service text-center">
-                                          <img src="/image/service2.png" alt="logo">
-                                          <p class="mb-0">Hồ sơ nhà đất</p>
-                                        </div>
-                                        <div class="box-service text-center">
-                                          <img src="/image/service4.png" alt="logo">
-                                          <p class="mb-0">Khai tử </p>
-                                        </div>
-                                        <div class="box-service text-center">
-                                          <img src="/image/service6.png" alt="logo">
-                                          <p class="mb-0">Hướng dẫn</p>
-                                        </div>
-                                        <div class="box-service text-center">
-                                          <img src="/image/service6.png" alt="logo">
-                                          <p class="mb-0">Hướng dẫn</p>
-                                        </div>
-                                        <div class="box-service text-center">
-                                          <img src="/image/service6.png" alt="logo">
-                                          <p class="mb-0">Hướng dẫn</p>
-                                        </div>
-                                      </div>
                                     </div>
-                                  </div>
-                                  <div class="vertical-line-service"></div>
+                                    <div class="vertical-line-service"></div>
                                 </div>
 
-                            <div class="display-service col-md-7">
-                                <form action="">
-                                    <div class="select-image-service d-flex align-items-center">
-                                        <img id="selected-image" src="/image/cam.png" alt="logo">
-                                        <input type="file" id="file-input" style="display: none;">
-                                        <a id="choose-image-btn">Chọn ảnh</a>
-                                    </div>
-                                    <div class="service-name">
-                                        <p>Tên dịch vụ:</p>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="service-description">
-                                        <p>Mô tả dịch vụ:</p>
-                                        <textarea class="form-control" name="service-description" id=""></textarea>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-3 mt-3">
-                                        <label style="color: #4F4F4F;" for="number-of-characters" class="mb-0">Số thứ
-                                            tự:</label>
-                                        <div class="number-input-wrapper">
-                                            <a href="javascript:void(0)" onclick="changeNumber(-1)">
-                                                <i class="bi bi-dash"></i>
-                                            </a>
-                                            <input type="number" id="quantity" value="1" min="1" />
-                                            <a href="javascript:void(0)" onclick="changeNumber(1)">
-                                                <i class="bi bi-plus"></i>
-                                            </a>
+                                <div class="display-service col-md-7">
+                                    <form action="">
+                                        <div class="select-image-service d-flex align-items-center">
+                                            <img id="selected-image" src="/image/cam.png" alt="logo">
+                                            <input type="file" id="file-input" style="display: none;">
+                                            <a id="choose-image-btn">Chọn ảnh</a>
                                         </div>
-                                    </div>
-                                    <div class="process-time">
-                                        <p>Thời gian xử lý một hồ sơ:</p>
-                                        <div class="d-flex align-items-center">
-                                            <input class="form-control hour-service" type="text">
-                                            <label class="ms-2" style="color: #919191;" for="hour">giờ</label>
-                                            <input class="form-control minutes-service ms-2" type="text">
-                                            <label class="ms-2" style="color: #919191;" for="minutes">phút</label>
-                                                <input class="undetermined-service ms-2" type="checkbox"
+                                        <div class="service-name">
+                                            <p>Tên dịch vụ:</p>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="service-description">
+                                            <p>Mô tả dịch vụ:</p>
+                                            <textarea class="form-control" name="service-description" id=""></textarea>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-3 mt-3">
+                                            <label style="color: #4F4F4F;" for="number-of-characters" class="mb-0">Số thứ tự:</label>
+                                            <div class="number-input-wrapper">
+                                                <a href="javascript:void(0)" onclick="changeNumber(-1)">
+                                                    <i class="bi bi-dash"></i>
+                                                </a>
+                                                <input type="number" id="quantity" value="1" min="1" />
+                                                <a href="javascript:void(0)" onclick="changeNumber(1)">
+                                                    <i class="bi bi-plus"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="process-time mt-3">
+                                            <p>Thời gian xử lý một hồ sơ:</p>
+                                            <div class="d-flex align-items-center ">
+                                                <input class="form-control hour-service" type="text">
+                                                <label class="ms-2" style="color: #919191;" for="hour">giờ</label>
+                                                <input class="form-control minutes-service ms-2" type="text">
+                                                <label class="ms-2" style="color: #919191;" for="minutes">phút</label>
+                                                <input class="undetermined-service ms-5" type="checkbox"
                                                     id="undetermined-checkbox">
-                                            <label class="ms-2" style="color: #4F4F4F;" for="undetermined">Không xác
-                                                định</label>
+                                                <label class="ms-2" style="color: #4F4F4F;" for="undetermined">Không xác
+                                                    định</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="off-service d-flex align-items-center">
-                                        <input type="checkbox" class="ms-2">
-                                        <label style="color: #4F4F4F;" for="off-service" class="ms-2">Tắt dịch vụ
-                                            này</label>
-                                    </div>
-                                    <div class="button-service d-flex justify-content-end">
-                                            <a class="btn cancel-service me-2" data-bs-toggle="modal" data-bs-target="#confirmModal">Hủy</a>
-                                        <button type="button" class="btn save-service"
-                                            onclick="showToast('Thao tác thành công!', 'success')">Lưu lại</button>
-                                    </div>
-                                </form>
+                                        <div class="off-service d-flex align-items-center mt-4">
+                                            <input type="checkbox">
+                                            <label style="color: #4F4F4F;" for="off-service" class="ms-2">Tắt dịch vụ
+                                                này</label>
+                                        </div>
+                                        <div class="button-service d-flex justify-content-end">
+                                            <a class="cancel-service me-2" data-bs-toggle="modal"
+                                                data-bs-target="#confirmModal">Hủy</a>
+                                            <button type="button" class="save-service"
+                                                onclick="showToast('Thao tác thành công!', 'success')">Lưu lại</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </main>
-        </div>
-    </div>
-
-    <!-- Toast Container -->
-    <div class="position-fixed bottom-0 end-0 p-3 toast-wrapper" style="z-index: 1055">
-        <div id="customToast" class="toast toast-animated align-items-center text-white bg-success border-0"
-            role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex align-items-center w-100">
-                <i class="toast-icon me-2"></i>
-                <div class="toast-body">Thông báo!</div>
-                <button type="button" class="btn-close btn-close-white ms-auto align-self-start" data-bs-dismiss="toast"
-                    aria-label="Đóng"></button>
-            </div>
-        </div>
-    </div>
-    <!--Modal confirm -->
-    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmModalLabel">Xác nhận hủy</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
-                </div>
-                <div class="modal-body">
-                    Bạn có chắc chắn muốn hủy tin này không?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="no-confirm"  data-bs-dismiss="modal">Không</button>
-                    <button type="button" class="yes-confirm" id="confirmDelete" onclick="showToast('Thao tác thành công!', 'success')">Xác nhận</button>
-                </div>
-            </div>
         </div>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    <!-- update disabled hour and minutes when user click checkbox undetermined -->
-    <script>
-        document.getElementById('undetermined-checkbox').addEventListener('change', function () {
-            const hourInput = document.querySelector('.hour-service');
-            const minutesInput = document.querySelector('.minutes-service');
-
-            if (this.checked) {
-                hourInput.disabled = true;
-                minutesInput.disabled = true;
-            } else {
-                hourInput.disabled = false;
-                minutesInput.disabled = false;
-            }
-        });
-        // open modal confirm 
-        document.getElementById('confirmDelete').addEventListener('click', function () {
-        const confirmModal = bootstrap.Modal.getInstance(document.getElementById('confirmModal'));
-        confirmModal.hide();
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/service-configuration.js"></script>
 </body>
 
 </html>
