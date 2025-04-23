@@ -1,9 +1,6 @@
 .modal-content {
     border: 1px solid #DBD6D6 !important;
 }
-.modal-content p {
-    margin-bottom: 0 !important;
-}
 .modal-header {
     background-color: #EEEEEE;
 }  
@@ -78,40 +75,60 @@
 
 /* confirm modal */
 .confirm-modal .modal-title {
-    font-family: "Be VietNam pro",sans-serif;
-    color: #000000;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.confirm-modal .modal-body span,
-.confirm-modal .modal-body p {
-    font-family: "Be VietNam pro",sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    color: #000000;
-}
-
-.confirm-modal #confirm-location {
-    font-size: 16px;
-}
-
-.confirm-modal .no-confirm,
-.confirm-modal .yes-confirm 
-{
-    border: none;
-    width: 85px;
-    height: 35px;
-    border-radius: 20px;
-    color: white;
-    font-family: "Be Vietnam Pro", sans-serif;
+    font-family: "Be VietNam Pro", sans-serif;
+    font-size: 25px;
+    color: #1A1B23;
     font-weight: 500;
-    font-size: 12px;
+}
+
+.confirm-modal .modal-body p,
+.confirm-modal label,
+.confirm-modal span {
+    font-family: "Be VietNam Pro", sans-serif;
+    font-size: 18px;
+    color: #1A1B23;
+}
+
+.confirm-modal .info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+}
+
+.confirm-modal .info-item {
+    flex: 1 1 45%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.confirm-modal .info-item label {
+    font-weight: 600;
+    min-width: 100px;
+}
+
+.confirm-modal .location {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.confirm-modal .modal-footer .btn {
+    min-width: 100px;
+    height: 36px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Be VietNam Pro", sans-serif;
+}
+
+.confirm-modal .yes-confirm {
+    background: linear-gradient(#4DD969 0%, #28CD56 100%);
+    border: none;
+    color: white;
 }
 
 .confirm-modal .no-confirm {
-    background: linear-gradient( #85A5CD 0%, #4E6AA0 100%);
-}
-.confirm-modal .yes-confirm {
-    background: linear-gradient( #4DD969 0%, #28CD56 100%);
+    background: linear-gradient(#85A5CD 0%, #4E6AA0 100%);
+    border: none;
+    color: white;
 }
