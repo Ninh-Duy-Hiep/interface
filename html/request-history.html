@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lịch sử yêu cầu - Hệ thống đăng kí dịch vụ một cửa SOSR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
+    <link rel="stylesheet" href="../css/main-screen.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header bg-light">
+        <div class="container-fluid px-0">
+            <div class="row align-items-center mx-0">
+                <div class="header-left col-12 col-lg-6 d-flex align-items-center mb-3 mb-md-0">
+                    <div class="logo-wrapper me-3">
+                        <img src="/image/logo-header.png" alt="Logo" class="logo" />
+                    </div>
+                    <div class="header-text d-flex flex-column">
+                        <p class="header-title mb-0">
+                            HỆ THỐNG ĐĂNG KÍ DỊCH VỤ MỘT CỬA
+                            <span class="text-dark">SOSR</span>
+                        </p>
+                        <span class="address">PHƯỜNG QUANG TRUNG - TỈNH NGHỆ AN</span>
+                    </div>
+                </div>
+
+                <div
+                    class="header-right col-12 col-lg-6 d-flex justify-content-md-end justify-content-center align-items-center gap-3">
+                    <button class="btn logout-btn">Thoát</button>
+                    <div class="user-info d-flex flex-column align-items-center text-center">
+                        <div class="user-avatar-wrapper mb-1">
+                            <img src="/image/avatar-header.png" alt="Avatar" class="user-avatar" />
+                        </div>
+                        <span class="text-nowrap">Nguyễn Văn A</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid mt-2 mb-3">
+        <div class="row main-layout">
+            <!-- side bar -->
+            <aside class="col-2 menu position-relative">
+                <a href="#" class="menu-main-screen d-flex justify-content-between mb-3">
+                    <div class="text-main">
+                        <p class="text-main-1 mb-0">Màn hình chính</p>
+                        <p class="text-main-2 mb-0">Danh sách hàng đợi chờ xử lý</p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-main" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
+                <a href="#" class="menu-service-configuration d-flex justify-content-between mb-3">
+                    <div class="text-service">
+                        <p class="text-service-1 mb-0">Cấu hình dịch vụ</p>
+                        <p class="text-service-2 mb-0">
+                            Danh sách các dịch vụ trực tuyến
+                        </p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-service" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
+                <a href="#" class="menu-news-management d-flex justify-content-between mb-3">
+                    <div class="text-news">
+                        <p class="text-news-1 mb-0">Lịch sử yêu cầu</p>
+                        <p class="text-news-2 mb-0">Danh sách các yêu cầu đã xử lý</p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-news active" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
+                <div class="divider-vertical p-0"></div>
+            </aside>
+
+            <!-- display -->
+            <main class="col-10 display-container">
+                <div class="main-screen show">
+                    <div class="header-main-screen d-flex justify-content-between">
+                        <div class="datepicker-wrapper position-relative">
+                            <div class="input-group ms-5">
+                              <input type="text" id="datepicker" class="form-control" placeholder="Chọn ngày"/>
+                              <span class="input-group-text" id="calendar-icon"><i class="bi bi-calendar3"></i></span>
+                            </div>
+                          </div>
+                          
+
+                        <div class="choose-service d-flex align-items-center">
+                            <label for="choose-service" class="me-2">Chọn dịch vụ:</label>
+                            <p id="selected-service" class="mb-0"></p>
+                            <div class="dropdown ms-2">
+                                <button class="btn btn-outline-secondary dropdown-toggle p-2 d-flex align-items-center"
+                                    type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <ion-icon name="chevron-down-outline" id="dropdown-icon"></ion-icon>
+                                </button>
+                                <ul class="dropdown-menu" id="dropdown-list">
+                                    <li>
+                                        <a class="dropdown-item" href="#">Tạm trú tạm vắng</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Hồ sơ nhà đất</a></li>
+                                    <li><a class="dropdown-item" href="#">Khai sinh</a></li>
+                                    <li><a class="dropdown-item" href="#">Khai tử</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Hỏi đáp pháp luật luật luật luật hỏi Hỏi đáp
+                                            pháp luật luật luật luật hỏi</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Hướng dẫn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="search">
+                            <input placeholder="Tên Công dân cần tìm" class="input" />
+                            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                                <g>
+                                    <path
+                                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                                    </path>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="display-main-screen">
+                        <div class="display-section d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-3" style="flex: 4.5;">
+                                <img src="/image/avatar2.jpg" alt="logo" class="img-fluid rounded-circle" />
+                                <div>
+                                    <p class="mb-0 name">Nguyễn Hoàng Trọng Thế</p>
+                                    <p class="mb-0 location">
+                                        Khu tập thể nhà máy nước Quang Trung, SN 16 ngõ 17
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="service-info d-flex justify-content-center" style="flex: 2.5;">
+                                <div>
+                                    <p class="mb-0 name-service" style="max-width: 180px;">Tạm trú tạm vắng</p>
+                                    <span>09:30 - 02/04/2025</span>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div style="flex: 1.5;"
+                                class="d-flex justify-content-center flex-column align-items-center">
+                                <span class="status done">Hoàn thành</span>
+                                <span class="officer-name">Nguyễn Minh A</span>
+                            </div>
+                        </div>
+                        <div class="display-section d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-3" style="flex: 4.5;">
+                                <img src="/image/avatar2.jpg" alt="logo" class="img-fluid rounded-circle" />
+                                <div>
+                                    <p class="mb-0 name">Nguyễn Hoàng Trọng Thế</p>
+                                    <p class="mb-0 location">
+                                        Khu tập thể nhà máy nước Quang Trung, SN 16 ngõ 17
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="service-info d-flex justify-content-center" style="flex: 2.5;">
+                                <div>
+                                    <p class="mb-0 name-service" style="max-width: 180px;">Khai sinh</p>
+                                    <span>09:30 - 02/04/2025</span>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div style="flex: 1.5;"
+                                class="d-flex justify-content-center flex-column align-items-center">
+                                <span class="status cancel">Đã hủy</span>
+                                <span class="officer-name">Nguyễn Minh Trường Giang</span>
+                            </div>
+                        </div>
+                        <div class="display-section d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-3" style="flex: 4.5;">
+                                <img src="/image/avatar2.jpg" alt="logo" class="img-fluid rounded-circle" />
+                                <div>
+                                    <p class="mb-0 name">Nguyễn Hoàng Trọng Thế</p>
+                                    <p class="mb-0 location">
+                                        Khu tập thể nhà máy nước Quang Trung, SN 16 ngõ 17
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="service-info d-flex justify-content-center" style="flex: 2.5;">
+                                <div>
+                                    <p class="mb-0 name-service" style="max-width: 180px;">Hỏi đáp pháp luât luật luật
+                                        luật luật</p>
+                                    <span>09:30 - 02/04/2025</span>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div style="flex: 1.5;"
+                                class="d-flex justify-content-center flex-column align-items-center">
+                                <span class="status done">Hoàn thành</span>
+                                <span class="officer-name">Nguyễn Minh A Nguyễn Minh A</span>
+                            </div>
+                        </div>
+                        <div class="display-section d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-3" style="flex: 4.5;">
+                                <img src="/image/avatar2.jpg" alt="logo" class="img-fluid rounded-circle" />
+                                <div>
+                                    <p class="mb-0 name">Nguyễn Hoàng Trọng Thế</p>
+                                    <p class="mb-0 location">
+                                        Khu tập thể nhà máy nước Quang Trung, SN 16 ngõ 17
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="service-info d-flex justify-content-center" style="flex: 2.5;">
+                                <div>
+                                    <p class="mb-0 name-service" style="max-width: 180px;">Tạm</p>
+                                    <span>09:30 - 02/04/2025</span>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div style="flex: 1.5;"
+                                class="d-flex justify-content-center flex-column align-items-center">
+                                <span class="status done">Hoàn thành</span>
+                                <span class="officer-name">Nguyễn Minh A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.vi.min.js"></script>
+    <script src="../js/request-history.js"></script>
+</body>
+
+</html>
