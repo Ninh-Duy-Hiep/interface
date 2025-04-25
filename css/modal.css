@@ -11,7 +11,8 @@
     font-weight: 500;
 } 
 
-.modal-body label {
+.modal-body label,
+.modal-body input {
     font-family: "Be VietNam pro",sans-serif;
     font-weight: 500;
     font-size: 15px;

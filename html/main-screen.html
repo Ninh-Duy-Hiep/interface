@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -373,8 +374,7 @@
                                                 </div>
                                                 <div>
                                                     <label for="processNote" class="form-label">Ghi chú:</label>
-                                                    <textarea class="form-control custom-textarea" id="processNote"
-                                                        rows="3"></textarea>
+                                                    <div id="editor-process" class="quill-editor"></div>
                                                 </div>
                                             </div>
                                             <div
@@ -397,8 +397,9 @@
                                                         onclick="openConfirmModal()">
                                                         Hủy
                                                     </button>
-                                                    <button type="button" class="custom-save-btn" data-modal-id="processModal"
-                                                        data-toast-type="success" onclick="handleSave(this)">
+                                                    <button type="button" class="custom-save-btn"
+                                                        data-modal-id="processModal" data-toast-type="success"
+                                                        onclick="handleSave(this)">
                                                         Lưu lại
                                                     </button>
                                                     <a class="custom-close-btn" data-bs-dismiss="modal">Đóng</a>
@@ -431,8 +432,7 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="processNote" class="form-label">Ghi chú:</label>
-                                                    <textarea class="form-control custom-textarea" id="processNote"
-                                                        rows="3"></textarea>
+                                                    <div id="editor-done" class="quill-editor"></div>
                                                 </div>
                                                 <div class="d-flex justify-content-end align-items-center gap-2">
                                                     <input style="width: 25px; height: 25px;" type="checkbox" checked
@@ -443,11 +443,13 @@
                                             </div>
                                             <div class="modal-footer custom-modal-footer d-flex justify-content-end">
                                                 <div class="d-flex gap-4">
-                                                    <button type="button" class="custom-cancel-btn" onclick="openConfirmModal()">
+                                                    <button type="button" class="custom-cancel-btn"
+                                                        onclick="openConfirmModal()">
                                                         Hủy
                                                     </button>
-                                                    <button type="button" class="custom-save-btn" data-modal-id="doneModal"
-                                                        data-toast-type="success" onclick="handleSave(this)">
+                                                    <button type="button" class="custom-save-btn"
+                                                        data-modal-id="doneModal" data-toast-type="success"
+                                                        onclick="handleSave(this)">
                                                         Lưu lại
                                                     </button>
                                                     <a class="custom-close-btn" data-bs-dismiss="modal">Đóng</a>
@@ -480,8 +482,7 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="processNote" class="form-label">Ghi chú:</label>
-                                                    <textarea class="form-control custom-textarea" id="processNote"
-                                                        rows="3"></textarea>
+                                                    <div id="editor-close" class="quill-editor"></div>
                                                 </div>
                                                 <div class="d-flex justify-content-end align-items-center gap-2">
                                                     <input style="width: 25px; height: 25px;" type="checkbox" checked
@@ -574,6 +575,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
     <script src="../js/main-screen.js"></script>
 </body>
 
