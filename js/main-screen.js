@@ -162,4 +162,55 @@ function handleSave(button) {
   showToast(message, toastType);
 }
 
+const editors = {
+  process: new Quill("#editor-process", {
+    theme: "snow",
+    modules: {
+      toolbar: [
+        ["bold", "italic", "underline"],
+        [
+          { align: "" },
+          { align: "center" },
+          { align: "right" },
+          { align: "justify" },
+        ],
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ background: [] }],
+        ["image"],]
+    }
+  }),
+  done: new Quill("#editor-done", {
+    theme: "snow",
+    modules: {
+      toolbar: [
+        ["bold", "italic", "underline"],
+        [
+          { align: "" },
+          { align: "center" },
+          { align: "right" },
+          { align: "justify" },
+        ],
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ background: [] }],
+        ["image"],]
+    }
+  }),
+  close: new Quill("#editor-close", {
+    theme: "snow",
+    modules: {
+      toolbar: [
+        ["bold", "italic", "underline"],
+        [
+          { align: "" },
+          { align: "center" },
+          { align: "right" },
+          { align: "justify" },
+        ],
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ background: [] }],
+        ["image"],]
+    }
+  }),
+};
+
 
