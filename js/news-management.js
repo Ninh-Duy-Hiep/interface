@@ -271,6 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const reader = new FileReader();
         reader.onload = function (e) {
           selectedImage.src = e.target.result;
+          selectedImage.classList.add('full-image');
         };
         reader.readAsDataURL(file);
       }
@@ -288,6 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const title = card.querySelector('.card-text-1').textContent;
 
     selectedImage.setAttribute('src', imgSrc);
+    selectedImage.classList.add('full-image');
     titleInput.value = title;
 
     fileInput.value = "";

@@ -24,6 +24,9 @@
 }
 
 .header-news button {
+    font-family: "Poppins",sans-serif;
+    font-size: 12px;
+    font-weight: 500;
     border-radius: 20px;
     width: 100px;
     height: 35px;
@@ -60,9 +63,15 @@
     cursor: pointer;
 }
 
+.card-news.selected {
+    background-color: #e6f7ff;
+    transition: background-color 0.3s ease;
+}
+
 .card-news img {
     padding: 10px 5px 10px 0px;
     width: 5rem;
+    height: 6rem;   
     object-fit: contain;
 }
 
@@ -86,7 +95,7 @@
 .news-checkbox {
     width: 18px;
     height: 18px;
-    cursor: pointer;
+    cursor: default;
 }
 
 .footer-news {
@@ -269,19 +278,42 @@
 
 .display-news p,
 .display-news label {
+    font-family: "Be VietNam Pro", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
     color: #4F4F4F;
+}
+
+.display-news input {
+    font-weight: 500;
+    font-size: 15px;
+    color: #1A1B23;
 }
 
 .select-image-news {
     gap: 25px;
 }
 
+.image-wrapper {
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #28CD56;
+}
+
 .select-image-news img {
     width: 57px;
     height: 57px;
-    border: 1px solid #28CD56;
-    border-radius: 50%;
-    padding: 2px;
+    object-fit: contain;
+}
+
+.select-image-news img.full-image {
+    width: 100%;
+    height: 100%;
 }
 
 .select-image-news a {
@@ -289,11 +321,9 @@
     width: 140px;
     height: 34px;
     border: none;
-    cursor: pointer;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
     cursor: pointer;
     background: linear-gradient(45deg, #4DD969, #28CD56);
     font-size: 12px;
@@ -308,7 +338,6 @@
     background-color: #FFFFFF;
     display: flex;
     align-items: center;
-    /* max-width: 400px; */
     height: 38px;
 }
 
@@ -328,10 +357,6 @@
     text-overflow: ellipsis;
     padding: 5px 10px;
     line-height: 24px;
-    font-family: "Be VietNam Pro", sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-    color: #919191;
 }
 
 .dropdown {
@@ -414,12 +439,23 @@
     border: 1px solid #DBD6D6;
     border-radius: 5px;
     overflow-y: auto;
+    font-family: "Be VietNam pro",sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #1A1B23;
 }
 
 .quill-editor {
     height: 150px !important;
     background-color: white;
     overflow-y: auto;
+}
+
+.quill-editor p {
+    font-family: "Be VietNam pro",sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #1A1B23;
 }
 
 .ql-editor img {
@@ -444,6 +480,7 @@
     font-weight: 500;
     color: #4F4F4F;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .publish-articles input {
@@ -453,6 +490,9 @@
 }
 
 .button-news {
+    font-family: "Poppins",sans-serif;
+    font-size: 12px;
+    font-weight: 500;
     gap: 20px;
     margin-top: 10px;
     margin-bottom: 20px;
