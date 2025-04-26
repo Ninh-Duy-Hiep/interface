@@ -75,15 +75,19 @@ function showCloseModal(button) {
 function showConfirmModal(button) {
   const card = button.closest('.display-section');
 
-  const number = card.querySelector('.number-service')?.textContent.trim() || '';
-  const name = card.querySelector('.name')?.textContent.trim() || '';
+  const number = card.querySelector('.number-service')?.textContent.trim()|| '';
+  let name = card.querySelector('.name')?.textContent.trim() || '';
   const phone = '0123456789'; 
-  const service = card.querySelector('.name-service')?.textContent.trim() || '';
+  let service = card.querySelector('.name-service')?.textContent.trim() || '';
   const location = card.querySelector('.location')?.textContent.trim() || '';
 
   const modalBody = document.querySelector('#confirmModal .modal-body');
 
   const lines = modalBody.querySelectorAll('span.d-flex');
+  
+
+  name = name.toUpperCase();
+  service = service.toUpperCase();
 
   document.getElementById('confirm-stt').textContent = number;
   document.getElementById('confirm-name').textContent = name;

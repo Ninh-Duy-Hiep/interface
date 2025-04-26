@@ -75,42 +75,43 @@
 
 
 /* confirm modal */
-.confirm-modal .modal-title {
-    font-family: "Be VietNam Pro", sans-serif;
-    font-size: 25px;
-    color: #1A1B23;
-    font-weight: 500;
-}
+
 
 .confirm-modal .modal-body p,
 .confirm-modal label,
-.confirm-modal span {
+.confirm-modal span,
+.confirm-modal .modal-title {
     font-family: "Be VietNam Pro", sans-serif;
-    font-size: 18px;
-    color: #1A1B23;
+    font-size: 20px;
+    color: #000000;
 }
 
 .confirm-modal .info-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px 30px;
+    gap: 5px 30px;
 }
 
 .confirm-modal .info-item {
     flex: 1 1 45%;
     display: flex;
-    gap: 8px;
+    gap: 5px;
     align-items: center;
 }
 
 .confirm-modal .info-item label {
-    font-weight: 600;
+    font-weight: 400;
     min-width: 100px;
+}
+.confirm-modal #confirm-name,
+.confirm-modal #confirm-stt,
+.confirm-modal #confirm-phone {
+    font-weight: bold;
 }
 
 .confirm-modal .location {
-    font-size: 18px;
-    line-height: 1.4;
+    font-size: 15px;
+    color: #1A1B23;
 }
 
 .confirm-modal .modal-footer .btn {
