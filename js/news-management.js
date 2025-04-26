@@ -18,15 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // js for detail-content
 const Size = Quill.import('attributors/style/size'); 
-Size.whitelist = ['8px', '9px', '10px', '11px', '12px', '13px','14px', '15px', '16px', '17px', '18px'];
+Size.whitelist = ['8', '9', '10', '11', '12', '13','14', '15', '16', '17', '18'];
 Quill.register(Size, true);
 
 const quill = new Quill("#editor", {
   theme: "snow",
   modules: {
     toolbar: [
-      [{ size: ['8px', '9px', '10px', '11px', '12px', '13px','14px', '15px', '16px', '17px', '18px'] }],
       ["bold", "italic", "underline"],
+      [{ size: ['8', '9', '10', '11', '12', '13','14', '15', '16', '17', '18'] }],
       [
         { align: "" },
         { align: "center" },
@@ -39,6 +39,7 @@ const quill = new Quill("#editor", {
     ],
   },
 });
+
 
 const newsList = Array.from({length: 20}, (_, i) => ({
   image: '../image/news1.png',
