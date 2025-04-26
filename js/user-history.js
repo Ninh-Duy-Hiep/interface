@@ -39,3 +39,19 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+
+// pick date 
+const $datepicker = $('#datepicker');
+
+$('#datepicker').datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose: true,
+    todayHighlight: true,
+    language: 'vi',
+    container: '.datepicker-wrapper'
+  });   
+  
+$('#calendar-icon').on('click', function () {
+  $datepicker.datepicker('show');
+});
