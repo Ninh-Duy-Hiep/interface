@@ -17,10 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // js for detail-content
+const Size = Quill.import('attributors/style/size'); 
+Size.whitelist = ['8px', '9px', '10px', '11px', '12px', '13px','14px', '15px', '16px', '17px', '18px'];
+Quill.register(Size, true);
+
 const quill = new Quill("#editor", {
   theme: "snow",
   modules: {
     toolbar: [
+      [{ size: ['8px', '9px', '10px', '11px', '12px', '13px','14px', '15px', '16px', '17px', '18px'] }],
       ["bold", "italic", "underline"],
       [
         { align: "" },

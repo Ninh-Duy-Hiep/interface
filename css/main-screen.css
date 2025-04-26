@@ -313,6 +313,37 @@ body.modal-open {
     border-radius: 0 0 0.375rem 0.375rem;
 }
 
+.ql-snow {
+    .ql-picker {
+        &.ql-size {
+            .ql-picker-label,
+            .ql-picker-item {
+                &::before {
+                    content: attr(data-value) !important;
+                }
+            }
+        }
+    }
+}
+
+.ql-picker-options {
+    height: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ql-picker-options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ql-picker-options::-webkit-scrollbar-thumb {
+    background-color: #D9D9D9;
+    border-radius: 3px;
+}
+
+.ql-snow .ql-picker.ql-size {
+    width: 70px !important;
+}
 
 /* request-history */
 .content-request-history {

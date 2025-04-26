@@ -155,7 +155,7 @@ function handleSave(button) {
       message = "Đây là thông tin cần chú ý!";
       break;
     default:
-      message = "Có gì đó xảy ra...";
+      message = "...";
       break;
   }
 
@@ -166,11 +166,18 @@ function handleSave(button) {
   showToast(message, toastType);
 }
 
+
+// js for quill 
+const Size = Quill.import('attributors/style/size'); 
+Size.whitelist = ['8px', '9px', '10px', '11px', '12px', '13px','14px', '15px', '16px', '17px', '18px'];
+Quill.register(Size, true);
+
 const editors = {
   process: new Quill("#editor-process", {
     theme: "snow",
     modules: {
       toolbar: [
+        [{ size: ['8px', '9px', '10px', '11px', '12px', '13px','14px', '15px', '16px', '17px', '18px'] }],
         ["bold", "italic", "underline"],
         [
           { align: "" },
@@ -187,6 +194,7 @@ const editors = {
     theme: "snow",
     modules: {
       toolbar: [
+        [{ size: ['8px', '9px', '10px', '11px', '12px', '13px','14px', '15px', '16px', '17px', '18px'] }],
         ["bold", "italic", "underline"],
         [
           { align: "" },
@@ -203,6 +211,7 @@ const editors = {
     theme: "snow",
     modules: {
       toolbar: [
+        [{ size: ['8px', '9px', '10px', '11px', '12px', '13px','14px', '15px', '16px', '17px', '18px'] }],
         ["bold", "italic", "underline"],
         [
           { align: "" },
