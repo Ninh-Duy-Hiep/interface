@@ -41,7 +41,7 @@ const quill = new Quill("#editor", {
 });
 
 
-const newsList = Array.from({length: 20}, (_, i) => ({
+const newsList = Array.from({length: 60}, (_, i) => ({
   image: '../image/news1.png',
   title: `Tin tức ${i + 1}`,
   date: '20/04/2025',
@@ -150,27 +150,11 @@ function getPageList(current, total) {
     }
   } else {
     if (current <= 4) {
-      for (let i = 1; i <= 5; i++) {
-        range.push(i);
-      }
-      range.push("...");
-      range.push(total);
-    }
-    else if (current >= total - 3) {
-      range.push(1);
-      range.push("...");
-      for (let i = total - 4; i <= total; i++) {
-        range.push(i);
-      }
-    } 
-    else {
-      range.push(1);
-      range.push("...");
-      for (let i = current - 1; i <= current + 1; i++) {
-        range.push(i);
-      }
-      range.push("...");
-      range.push(total);
+      range.push(1, 2, 3, 4, 6, "...", total);
+    } else if (current >= total - 1) {
+      range.push(1, "...", total - 4, total - 3, total - 2,total - 1, total);
+    } else {
+      range.push(current - 3,current - 2,current - 1, current, current + 1, "...", total);
     }
   }
 
