@@ -26,10 +26,9 @@
                 </div>
             </div>
             <div class="header-right d-flex align-items-center gap-2">
-                <div class=" instruct-zalo d-flex justify-content-between">
+                <div class="instruct-zalo d-flex justify-content-between">
                     <p class="ms-3 fw-bold m-0 d-flex justify-content-center align-items-center">LẤY SỐ VỚI ZALO <br>
-                        MINI
-                        APP TẠI ĐÂY</p>
+                        MINI APP TẠI ĐÂY</p>
                     <div class="mx-2 image-wrap d-flex align-items-center justify-content-center">
                         <img src="/image/image 14.png" alt="" style="max-height: 40px;">
                     </div>
@@ -119,18 +118,105 @@
         </div>
     </div>
 
+    <!-- Modal instruct zalo-->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="fw-bold m-0">HƯỚNG DẪN SỬ DỤNG ZALO APP</p>
+                </div>
+                <div class="modal-body d-flex">
+                    <div>
+                        <ul>
+                            <li>1. Mở Zalo của bạn</li>
+                            <li>2. Tại góc trên bên phải màn hình Zalo chọn biểu tượng mã QR</li>
+                            <li><img src="/image/Sample image.png"></li>
+                            <li>3. Quét mã QR đang hiển thị trên màn hình</li>
+                            <li>4. Đăng nhập sử dụng với Zalo của bạn</li>
+                        </ul>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center ms-auto mx-auto">
+                        <img src="/image/QR.png" alt="qr">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal">Đóng lại</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal open kiosk -->
+    <div class="modal fade" id="kioskModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="m-0"></p>
+                </div>
+                <div class="modal-body d-flex">
+                    <div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="/image/image 16.png" alt="">
+                        </div>
+                        <ul>
+                            <p class="m-0">NHIỆM VỤ</p>
+                            <li>1. Chứng thực các tài liệu bản sao , sao y bản chính.</li>
+                            <li>2. Chứng thực thông tin công dân.</li>
+                            <li>3. Chứng thực bản sao dịch thuật.</li>
+                            <li>4. Chứng thực các giấy tờ do Nhà nước cấp còn trong thời hạn.</li>
+                        </ul>
+                    </div>
+                    <div class="line-modal mx-4"></div>
+                    <div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="/image/image 17.png" alt="">
+                        </div>
+                        <ul>
+                            <p class="m-0">LƯU Ý</p>
+                            <li>1. Công dân cần chủ động photo các giấy tờ cần chứng thực.</li>
+                            <li>2. Khai báo thông tin theo mẫu M001 tại quầy.</li>
+                            <li>3. Các giấy tờ có ảnh, nên chụp ảnh 3x4 (06 ảnh).</li>
+                            <li>4. Lấy số qua Zalo app sẽ nhanh hơn trong quá trình chứng thực.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-start align-items-center">
+                        <div class="logo-qr" style="cursor: pointer;">
+                            <img style="width: 48px;height: 48px;" src="/image/QR.png" alt="logo-qr">
+                        </div>
+                        <div class="instruct-zalo d-flex justify-content-between" style="cursor: pointer;">
+                            <div class="image-wrap d-flex align-items-center justify-content-center">
+                                <img src="/image/image 144 .png" alt="" style="width: 25px;height: 25px;">
+                            </div>
+                            <p class=" fw-bold m-0 d-flex justify-content-center align-items-center">Kích hoạt Zalo app
+                                <br> để lấy số trực tuyến tại đây
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end ms-auto gap-3">
+                        <button class="button-stt" type="button">Lấy số thứ tự</button>
+                        <button class="button-close" type="button" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // full screen
         const triggerElement = document.getElementById('fullscreen-trigger');
-
         triggerElement.addEventListener('click', () => {
             if (!document.fullscreenElement) {
-                const elem = document.documentElement; 
+                const elem = document.documentElement;
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
-                } else if (elem.webkitRequestFullscreen) { 
+                } else if (elem.webkitRequestFullscreen) {
                     elem.webkitRequestFullscreen();
-                } else if (elem.msRequestFullscreen) { 
+                } else if (elem.msRequestFullscreen) {
                     elem.msRequestFullscreen();
                 }
             }
@@ -139,12 +225,49 @@
         triggerElement.addEventListener('dblclick', () => {
             if (document.exitFullscreen) {
                 document.exitFullscreen();
-            } else if (document.webkitExitFullscreen) { 
+            } else if (document.webkitExitFullscreen) {
                 document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) { 
+            } else if (document.msExitFullscreen) {
                 document.msExitFullscreen();
             }
         });
+
+        function openModalById(modalId) {
+            const modalElement = document.getElementById(modalId);
+            if (modalElement) {
+                const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+                modal.show();
+            }
+        }
+
+
+        // open modal instruct zalo
+        document.querySelector('.instruct-zalo').addEventListener('click', () => {
+            openModalById('infoModal');
+        });
+        document.querySelector('.logo-qr').addEventListener('click', () => {
+            openModalById('infoModal');
+        });
+
+        // open modal kiosk
+        document.querySelectorAll('.kiosk').forEach(kiosk => {
+            kiosk.addEventListener('click', () => {
+                const title = kiosk.querySelector('span')?.textContent;
+                const modalHeader = document.querySelector('#kioskModal .modal-header p');
+                if (modalHeader) {
+                    modalHeader.textContent = title;
+                }
+                openModalById('kioskModal');
+            });
+        });
+
+        document.querySelector('#kioskModal .instruct-zalo')?.addEventListener('click', () => {
+            openModalById('infoModal');
+        });
+        document.querySelector('#kioskModal .logo-qr')?.addEventListener('click', () => {
+            openModalById('infoModal');
+        });
+
     </script>
 
 
