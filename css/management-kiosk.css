@@ -1,0 +1,161 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; 
+
+}
+
+.header {
+    background: url("/image/header.png");
+    background-size: cover;
+    width: 100%;
+}
+
+.header-right,
+.header-left {
+    cursor: pointer;
+}
+
+.logo-wrapper {
+    background: #FFFFFFBD;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    z-index: 10;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.header-title {
+    border-radius: 4px;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #28CD56;
+    white-space: nowrap;
+}
+
+.header-title::before {
+    content: "";
+    position: absolute;
+    left: -9rem;
+    top: 0;
+    width: calc(100% + 150px);
+    height: 100%;
+    background-color: #FFFFFFBD;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.address {
+    font-size: 12px;
+    color: #747775;
+    margin-left: 10px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 500;
+}
+
+.instruct-zalo {
+    background-color: #FFFFFF;
+    width: 167px;
+    height: 48px;
+    border-radius: 5px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 10px;
+}
+
+.instruct-zalo img {
+    width: 36px;
+    height: 36px;
+}
+
+.logo-qr img {
+    width: 96px;
+    height: 96px;
+}
+
+.display-kiosk {
+    height: 60vh;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+}
+
+.display-kiosk::-webkit-scrollbar {
+    width: 6px;
+}
+.display-kiosk::-webkit-scrollbar-thumb {
+    background-color: #D9D9D9;
+    border-radius: 3px;
+}
+
+.display-kiosk span {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #4F4F4F;
+
+}
+
+.kiosk {
+    background-color: #FAFCFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+}
+
+.kiosk-wrapper img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 3px;
+    border: 1px solid #28CD56;
+    background-color: #FFFFFF;
+}
+
+
+.footer-kiosk {
+    background-color: #DBD6D6;
+}
+
+.footer-kiosk img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer-kiosk-wrapper {
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #28CD56;
+}
