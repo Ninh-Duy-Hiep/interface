@@ -204,7 +204,7 @@
     </div>
 
     <!-- Modal open get number -->
-    <div class="modal fade" id="kioskModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="numberModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -262,6 +262,7 @@
             }
         });
 
+        // 
         function openModalById(modalId) {
             const modalElement = document.getElementById(modalId);
             if (modalElement) {
@@ -269,37 +270,27 @@
                 modal.show();
             }
         }
-
-
-        // open modal instruct zalo
-        document.querySelector('.instruct-zalo').addEventListener('click', () => {
-            openModalById('infoModal');
-        });
-        document.querySelector('.logo-qr').addEventListener('click', () => {
-            openModalById('infoModal');
+        
+        //open infoModal
+        ['.instruct-zalo', '.logo-qr', '#kioskModal .instruct-zalo', '#kioskModal .logo-qr'].forEach(selector => {
+            document.querySelectorAll(selector).forEach(el => {
+                el.addEventListener('click', () => openModalById('infoModal'));
+            });
         });
 
-        // open modal kiosk
+        // open kiosk
         document.querySelectorAll('.kiosk').forEach(kiosk => {
             kiosk.addEventListener('click', () => {
                 const spanText = kiosk.querySelector('span')?.textContent || '';
                 const serviceName = spanText.split(':')[1]?.trim();
-
                 const modalHeader = document.querySelector('#kioskModal .modal-header p');
                 if (modalHeader && serviceName) {
                     modalHeader.textContent = `DỊCH VỤ: ${serviceName}`;
                 }
-
                 openModalById('kioskModal');
             });
         });
 
-        document.querySelector('#kioskModal .instruct-zalo')?.addEventListener('click', () => {
-            openModalById('infoModal');
-        });
-        document.querySelector('#kioskModal .logo-qr')?.addEventListener('click', () => {
-            openModalById('infoModal');
-        });
 
     </script>
 
