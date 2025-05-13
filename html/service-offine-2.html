@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Màn hình chính - Hệ thống đăng kí dịch vụ một cửa SOSR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/service-offine-2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header bg-light">
+        <div class="container-fluid px-0">
+            <div class="row align-items-center mx-0">
+                <div class="header-left col-12 col-lg-6 d-flex align-items-center mb-3 mb-md-0">
+                    <div class="logo-wrapper me-3">
+                        <img src="/image/logo-header.png" alt="Logo" class="logo" />
+                    </div>
+                    <div class="header-text d-flex flex-column">
+                        <p class="header-title mb-0">
+                            HỆ THỐNG ĐĂNG KÍ DỊCH VỤ MỘT CỬA
+                            <span class="text-dark">SOSR</span>
+                        </p>
+                        <span class="address">PHƯỜNG QUANG TRUNG - TỈNH NGHỆ AN</span>
+                    </div>
+                </div>
+
+                <div
+                    class="header-right col-12 col-lg-6 d-flex justify-content-md-end justify-content-center align-items-center gap-3">
+                    <button class="btn logout-btn">Thoát</button>
+                    <div class="user-info d-flex flex-column align-items-center text-center">
+                        <div class="user-avatar-wrapper mb-1">
+                            <img src="/image/avatar-header.png" alt="Avatar" class="user-avatar" />
+                        </div>
+                        <span class="text-nowrap">Nguyễn Văn A</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid mt-2 mb-3">
+        <div class="row main-layout">
+            <!-- side bar -->
+            <aside class="col-2 menu position-relative">
+                <a href="#" class="menu-main-screen d-flex justify-content-between mb-3">
+                    <div class="text-main">
+                        <p class="text-main-1 mb-0">Cấu hình hệ thống</p>
+                        <p class="text-main-2 mb-0">Thiết lập các tham số hệ thống</p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <ion-icon class="button-text-main active" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </a>
+                <div class="divider-vertical p-0"></div>
+            </aside>
+
+            <!-- display -->
+            <main class="col-10 display-container">
+                <div class="system-parameter-configuration show">
+                    <div class="header-system-parameter-configuration">
+                        <p class="ms-4 d-flex align-items-center m-0 py-3">Cấu hình tham số hệ thống</p>
+                    </div>
+
+                    <div class="display-system-parameter-configuration p-4">
+                        <form class="form-zalo-qr" action="">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="select-image-news d-flex align-items-center gap-4 mb-4">
+                                        <div class="image-wrapper" id="imageWrapper">
+                                            <img id="selected-image-news" src="/image/cam.png" alt="logo">
+                                        </div>
+                                        <input type="file" id="file-input" style="display: none;">
+                                        <div>
+                                            <p class="title-img mb-1">Logo của hệ thống</p>
+                                            <a id="choose-image-btn-news">Chọn ảnh</a>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="mb-1" for="">Tên Hệ thống:</label>
+                                        <input type="text" class="form-control system-name-input"
+                                            placeholder="Tên Hệ thống" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="mb-1" for="">Tên Phường:</label>
+                                        <input type="text" class="form-control ward-name-input"
+                                            placeholder="Tên Phường" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="mb-1" for="">Mã QR liên kết tới Zalo mini App:</label>
+                                        <div class="d-flex gap-3">
+                                            <input type="text" class="form-control url-img-qr" />
+                                            <a id="choose-qr-btn">Chọn QR</a>
+                                            <input type="file" id="qr-file-input" style="display: none;">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="mb-1" for="">Hướng dẫn kích hoạt Zalo mini App:</label>
+                                        <div id="qr-app" class="quill-qr"></div>
+                                    </div>
+                                </div>
+
+                                <div class="display-qr col-4">
+                                    <div class="d-flex flex-column align-items-center justify-content-center">
+                                        <img src="/image/QR.png" alt="QR">
+                                        <span class="title-qr">Mã QR đang liên kết tới zalo app đang sử dụng</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-button d-flex justify-content-end gap-3 mt-3 ms-auto">
+                                <a class="qr-button d-flex justify-content-center align-items-center">Hủy</a>
+                                <button class="qr-button">Lưu lại</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="../js/service-offine-2.js"></script>
+
+    <script>
+        // select logo
+        initImageUploadSync({
+            fileInputId: 'file-input',
+            triggerButtonId: 'choose-image-btn-news',
+            previewImageId: 'selected-image-news',
+            targetImageSelector: '.logo-wrapper img'
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            populateFormFromHeader({
+                systemNameSelector: ".header-title",
+                wardNameSelector: ".address",
+                systemInputSelector: 'input[placeholder="Tên Hệ thống"]',
+                wardInputSelector: 'input[placeholder="Tên Phường"]'
+            });
+
+            initQRImageSelector({
+                fileInputId: "qr-file-input",
+                triggerButtonId: "choose-qr-btn",
+                targetImageSelector: ".display-qr img",
+                textInputSelector: ".url-img-qr"
+            });
+        });
+
+
+        // quill
+        const qr = initCustomQuill('#qr-app');
+
+    </script>
+</body>
+
+</html>
