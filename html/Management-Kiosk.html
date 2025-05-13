@@ -151,7 +151,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p class="m-0"></p>
+                    <p class="m-0 fw-bold"></p>
                 </div>
                 <div class="modal-body d-flex">
                     <div>
@@ -195,7 +195,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end ms-auto gap-3">
-                        <button class="button-stt" type="button">Lấy số thứ tự</button>
+                        <button class="button-stt" id="get-number-btn" type="button">Lấy số thứ tự</button>
                         <button class="button-close" type="button" data-bs-dismiss="modal">Đóng</button>
                     </div>
                 </div>
@@ -208,11 +208,39 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p class="m-0"></p>
+                    <p class="m-0 fw-bold"></p>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body d-flex">
+                    <!-- Cột trái -->
+                    <div class="w-50 d-flex flex-column justify-content-center align-items-center">
+                        <p class="m-0 fw-bold">Số thứ tự của bạn</p>
+                        <div class="modal-body-1">
+                            <span style="font-size: 20px;"
+                                class="fw-bold mt-2 d-flex justify-content-center align-items-center"></span>
+                            <p style="font-size: 48px;"
+                                class="fw-bold mt-4 d-flex justify-content-center align-items-center m-0">1008</p>
+                        </div>
+                    </div>
 
+                    <!-- Line ở giữa -->
+                    <div class="line-modal mx-3" style="width: 1px; background: #ccc;"></div>
+
+                    <!-- Cột phải -->
+                    <div class="w-50">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="/image/image 17.png">
+                        </div>
+                        <ul>
+                            <p class="m-0">LƯU Ý:</p>
+                            <li>1. Hưởng ứng văn phòng không giấy và nhu cầu chuyển đổi số. Số thứ tự của bạn sẽ không
+                                được in ra.</li>
+                            <li>2. Vui lòng ghi lại hoặc chụp lại số thứ tự của mình.</li>
+                            <li>3. Khuyến cáo lấy số qua Zalo app sẽ nhanh hơn trong quá trình chứng thực. Hãy kích hoạt
+                                Zalo app để lấy số trực tuyến.</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="modal-footer">
                     <div class="d-flex justify-content-start align-items-center">
                         <div class="logo-qr" style="cursor: pointer;">
@@ -270,18 +298,37 @@
                 modal.show();
             }
         }
-        
+
         //open infoModal
-        ['.instruct-zalo', '.logo-qr', '#kioskModal .instruct-zalo', '#kioskModal .logo-qr'].forEach(selector => {
+        ['.instruct-zalo', '.logo-qr', '#kioskModal .instruct-zalo', '#kioskModal .logo-qr', '#numberModal .instruct-zalo', '#numberModal .logo-qr'].forEach(selector => {
             document.querySelectorAll(selector).forEach(el => {
-                el.addEventListener('click', () => openModalById('infoModal'));
+                el.addEventListener('click', () => {
+                    const kioskModalEl = document.getElementById('kioskModal');
+                    const numberModalEl = document.getElementById('numberModal');
+
+                    if (kioskModalEl.classList.contains('show')) {
+                        const kioskModal = bootstrap.Modal.getInstance(kioskModalEl);
+                        kioskModal?.hide();
+                    }
+
+                    if (numberModalEl.classList.contains('show')) {
+                        const numberModal = bootstrap.Modal.getInstance(numberModalEl);
+                        numberModal?.hide();
+                    }
+
+                    openModalById('infoModal');
+                });
             });
         });
+
+
+        let currentKioskSpanText = '';
 
         // open kiosk
         document.querySelectorAll('.kiosk').forEach(kiosk => {
             kiosk.addEventListener('click', () => {
                 const spanText = kiosk.querySelector('span')?.textContent || '';
+                currentKioskSpanText = spanText;
                 const serviceName = spanText.split(':')[1]?.trim();
                 const modalHeader = document.querySelector('#kioskModal .modal-header p');
                 if (modalHeader && serviceName) {
@@ -290,6 +337,28 @@
                 openModalById('kioskModal');
             });
         });
+
+        // open number modal 
+        document.getElementById('get-number-btn').addEventListener('click', () => {
+            const kioskModal = bootstrap.Modal.getOrCreateInstance(document.getElementById('kioskModal'));
+            kioskModal.hide();
+
+            const kioskTitle = document.querySelector('#kioskModal .modal-header p')?.textContent || '';
+            const numberModalHeader = document.querySelector('#numberModal .modal-header p');
+            if (numberModalHeader) {
+                numberModalHeader.textContent = kioskTitle;
+            }
+
+            const kioskName = currentKioskSpanText.split(':')[0]?.trim();
+            const numberModalSpan = document.querySelector('#numberModal .modal-body-1 span');
+            if (numberModalSpan) {
+                numberModalSpan.textContent = kioskName;
+            }
+
+            const numberModal = bootstrap.Modal.getOrCreateInstance(document.getElementById('numberModal'));
+            numberModal.show();
+        });
+
 
 
     </script>

@@ -166,8 +166,10 @@ main {
 
 
 /* modal infomodal*/
-#infoModal {
-    z-index: 1061;
+#infoModal .modal-header {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 14px;
+    color: #000000;
 }
 
 #infoModal .modal-body ul {
@@ -197,6 +199,9 @@ main {
 /* kiosk modal */
 #kioskModal .modal-header {
     background-color: #EEEEEE;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 14px;
+    color: #000000;
 }
 
 #kioskModal .modal-header p {
@@ -209,7 +214,6 @@ main {
 #kioskModal .line-modal {
     width: 2px;
     background-color: #EEEEEE;
-
 }
 
 #kioskModal .modal-body ul {
@@ -248,4 +252,45 @@ main {
     width: 136px;
     height: 34px;
     background: linear-gradient(#4DD969, #28CD56);
+}
+
+/* modal number */
+#numberModal .modal-header {
+    background-color: #EEEEEE;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+#numberModal .line-modal {
+    width: 2px;
+    background-color: #EEEEEE;
+}
+
+#numberModal .modal-body ul {
+    list-style: none;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+}
+
+#numberModal .modal-body ul li {
+    margin-left: 10px;
+    line-height: 25px;
+}
+
+.modal-body-1 {
+    width: 185px;
+    height: 152px;
+    border: 1px dashed #28CD56;
+}
+
+#numberModal .modal-footer button {
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
 }
