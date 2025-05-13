@@ -99,22 +99,40 @@
         </div>
 
     </main>
-    <div class="footer-kiosk d-flex justify-content-end align-items-center px-5">
-        <div class="py-2 d-flex align-items-center gap-4">
-            <div class="footer-kiosk-wrapper d-flex justify-content-center align-items-center">
-                <img src="/image/service5.png">
-            </div>
-            <label for="">Hỏi đáp pháp luật</label>
+    <div class="footer-kiosk d-flex align-items-center px-5">
+        <div id="fullscreen-trigger" style="cursor: pointer;">
+            <img src="/image/image 19.png" alt="full-screen">
         </div>
-        <div class="py-2 ps-5 d-flex align-items-center gap-4">
-            <div class="footer-kiosk-wrapper d-flex justify-content-center align-items-center">
-                <img src="/image/service5.png">
+        <div class="d-flex justify-content-end ms-auto">
+            <div class="py-1 d-flex align-items-center gap-4">
+                <div class="footer-kiosk-wrapper d-flex justify-content-center align-items-center">
+                    <img src="/image/service5.png">
+                </div>
+                <label for="">Hỏi đáp pháp luật</label>
             </div>
-            <label for="">Hướng dẫn</label>
+            <div class="py-1 ps-5 d-flex align-items-center gap-4">
+                <div class="footer-kiosk-wrapper d-flex justify-content-center align-items-center">
+                    <img src="/image/service5.png">
+                </div>
+                <label for="">Hướng dẫn</label>
+            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.getElementById('fullscreen-trigger').addEventListener('click', () => {
+        const elem = document.documentElement; 
+        if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+        }
+    });
+    </script>
+
 </body>
 
 </html>
